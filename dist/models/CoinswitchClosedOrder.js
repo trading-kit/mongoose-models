@@ -21,6 +21,6 @@ CoinswitchClosedOrderSchema.index({ id: -1, user: -1 }, { unique: true });
 CoinswitchClosedOrderSchema.index({ user: -1, updated_at: -1 });
 // CoinswitchClosedOrderSchema.index({ timestamp: -1 });
 //create index on
-const CoinswitchClosedOrder = mongoose.model("CoinswitchClosedOrder", CoinswitchClosedOrderSchema, "coinswitchClosedOrders");
+const CoinswitchClosedOrder = mongoose.models.CoinswitchClosedOrder || mongoose.model("CoinswitchClosedOrder", CoinswitchClosedOrderSchema, "coinswitchClosedOrders");
 //delete executed_qty :  0
 export default CoinswitchClosedOrder;
