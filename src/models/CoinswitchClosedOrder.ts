@@ -34,4 +34,4 @@ const CoinswitchClosedOrder =
 
 //delete executed_qty :  0
 
-export default CoinswitchClosedOrder;
+export { CoinswitchClosedOrder };

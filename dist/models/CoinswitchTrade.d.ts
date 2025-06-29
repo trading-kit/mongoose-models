@@ -1,25 +1,25 @@
 import mongoose from "mongoose";
 declare const CoinswitchTrade: mongoose.Model<{
     id?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-    quantity?: number | null | undefined;
     price?: number | null | undefined;
     executed_qty?: number | null | undefined;
+    timestamp?: number | null | undefined;
+    quantity?: number | null | undefined;
+    fee_amount?: number | null | undefined;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
     id?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-    quantity?: number | null | undefined;
     price?: number | null | undefined;
     executed_qty?: number | null | undefined;
+    timestamp?: number | null | undefined;
+    quantity?: number | null | undefined;
+    fee_amount?: number | null | undefined;
 }, {}> & {
     id?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-    quantity?: number | null | undefined;
     price?: number | null | undefined;
     executed_qty?: number | null | undefined;
+    timestamp?: number | null | undefined;
+    quantity?: number | null | undefined;
+    fee_amount?: number | null | undefined;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
@@ -28,25 +28,25 @@ declare const CoinswitchTrade: mongoose.Model<{
     strict: false;
 }, {
     id?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-    quantity?: number | null | undefined;
     price?: number | null | undefined;
     executed_qty?: number | null | undefined;
+    timestamp?: number | null | undefined;
+    quantity?: number | null | undefined;
+    fee_amount?: number | null | undefined;
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     id?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-    quantity?: number | null | undefined;
     price?: number | null | undefined;
     executed_qty?: number | null | undefined;
+    timestamp?: number | null | undefined;
+    quantity?: number | null | undefined;
+    fee_amount?: number | null | undefined;
 }>, {}> & mongoose.FlatRecord<{
     id?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-    quantity?: number | null | undefined;
     price?: number | null | undefined;
     executed_qty?: number | null | undefined;
+    timestamp?: number | null | undefined;
+    quantity?: number | null | undefined;
+    fee_amount?: number | null | undefined;
 }> & {
     _id: mongoose.Types.ObjectId;
 } & {
