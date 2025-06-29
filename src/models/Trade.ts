@@ -1,4 +1,3 @@
-import moment from "moment";
 import mongoose from "mongoose";
 
 const { Schema } = mongoose;
@@ -23,29 +22,6 @@ TradeSchema.index({
 //create unique index on id
 TradeSchema.index({ id: 1 }, { unique: true });
 
-const model = mongoose.model("Trade", TradeSchema);
-
-class Trade extends model {
-  static async getRecentTradeVolume(platform: string, minutes: number = 60) {
-    const startTimestamp = moment().subtract(minutes, "minutes").unix() * 1000;
-
-    const trades = await Trade.aggregate([
-      {
-        $match: {
-          platform,
-          time: { $gt: startTimestamp },
-        },
-      },
-      {
-        $group: {
-          _id: "$symbol",
-          totalVolume: { $sum: "$quoteQty" },
-        },
-      },
-    ]);
-
-    return trades;
-  }
-}
+const Trade = mongoose.model("Trade", TradeSchema);
 
 export default Trade;

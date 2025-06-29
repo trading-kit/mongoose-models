@@ -1,10 +1,16 @@
 {
   "name": "@trading-kit/mongoose-models",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "type": "module",
   "private": true,
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "mongoose": "^8.16.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
   }
 }
