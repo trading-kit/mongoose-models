@@ -96,3 +96,5 @@ build/
 
 *.env
 
+
+.npmrc
