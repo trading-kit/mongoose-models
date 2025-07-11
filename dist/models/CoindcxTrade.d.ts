@@ -12,9 +12,5 @@ export interface ICoindcxTrade extends Document {
     order_id?: string;
     processed?: boolean;
 }
-export declare const CoindcxTrade: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<ICoindcxTrade, {}, {}, {}, mongoose.Document<unknown, {}, ICoindcxTrade, {}> & ICoindcxTrade & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>;
+export declare const CoindcxTrade: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=CoindcxTrade.d.ts.map

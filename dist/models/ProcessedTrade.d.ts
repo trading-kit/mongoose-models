@@ -27,9 +27,5 @@ export interface IProcessedTrade extends Document {
     quoteQty: number;
     tds: number;
 }
-export declare const ProcessedTrade: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<IProcessedTrade, {}, {}, {}, mongoose.Document<unknown, {}, IProcessedTrade, {}> & IProcessedTrade & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>;
+export declare const ProcessedTrade: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=ProcessedTrade.d.ts.map

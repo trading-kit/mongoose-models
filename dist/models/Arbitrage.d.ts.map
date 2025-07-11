@@ -1,1 +1,1 @@
-{"version":3,"file":"Arbitrage.d.ts","sourceRoot":"","sources":["../../src/models/Arbitrage.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,EAAE,EAAE,QAAQ,EAAU,MAAM,UAAU,CAAC;AAEtD,MAAM,WAAW,UAAW,SAAQ,QAAQ;IAC1C,UAAU,CAAC,EAAE,MAAM,CAAC;CACrB;AAOD,eAAO,MAAM,SAAS;;;;OACiE,CAAC"}
+{"version":3,"file":"Arbitrage.d.ts","sourceRoot":"","sources":["../../src/models/Arbitrage.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,EAAE,EAAE,QAAQ,EAAU,MAAM,UAAU,CAAC;AAEtD,MAAM,WAAW,UAAW,SAAQ,QAAQ;IAC1C,UAAU,CAAC,EAAE,MAAM,CAAC;CACrB;AAOD,eAAO,MAAM,SAAS,2CACiE,CAAC"}

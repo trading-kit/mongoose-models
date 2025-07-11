@@ -17,9 +17,5 @@ export interface IBitgetRawTrade extends Document {
     cTime: number;
     uTime: number;
 }
-export declare const BitgetRawTrade: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<IBitgetRawTrade, {}, {}, {}, mongoose.Document<unknown, {}, IBitgetRawTrade, {}> & IBitgetRawTrade & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>;
+export declare const BitgetRawTrade: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=BitgetRawTrade.d.ts.map

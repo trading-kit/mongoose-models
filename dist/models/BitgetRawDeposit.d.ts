@@ -8,9 +8,5 @@ export interface IBitgetRawDeposit extends Document {
     balance?: number;
     ts?: number;
 }
-export declare const BitgetRawDeposit: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<IBitgetRawDeposit, {}, {}, {}, mongoose.Document<unknown, {}, IBitgetRawDeposit, {}> & IBitgetRawDeposit & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>;
+export declare const BitgetRawDeposit: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=BitgetRawDeposit.d.ts.map

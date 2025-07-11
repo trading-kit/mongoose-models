@@ -5,9 +5,5 @@ export interface ILossAlert extends Document {
     exchange: string;
     type: string;
 }
-export declare const LossAlert: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<ILossAlert, {}, {}, {}, mongoose.Document<unknown, {}, ILossAlert, {}> & ILossAlert & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>;
+export declare const LossAlert: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=LossAlert.d.ts.map

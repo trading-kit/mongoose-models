@@ -4,9 +4,5 @@ export interface IAsset extends Document {
     asset: string;
     withdrawalFrom: string;
 }
-export declare const Asset: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<IAsset, {}, {}, {}, mongoose.Document<unknown, {}, IAsset, {}> & IAsset & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>;
+export declare const Asset: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=Asset.d.ts.map

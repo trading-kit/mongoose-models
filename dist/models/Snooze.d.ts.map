@@ -1,1 +1,1 @@
-{"version":3,"file":"Snooze.d.ts","sourceRoot":"","sources":["../../src/models/Snooze.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,EAAE,EAAE,QAAQ,EAAU,MAAM,UAAU,CAAC;AAEtD,MAAM,WAAW,OAAQ,SAAQ,QAAQ;IACvC,GAAG,EAAE,MAAM,CAAC;IACZ,WAAW,EAAE,IAAI,CAAC;CACnB;AAUD,eAAO,MAAM,MAAM;;;;OACwD,CAAC"}
+{"version":3,"file":"Snooze.d.ts","sourceRoot":"","sources":["../../src/models/Snooze.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,EAAE,EAAE,QAAQ,EAAU,MAAM,UAAU,CAAC;AAEtD,MAAM,WAAW,OAAQ,SAAQ,QAAQ;IACvC,GAAG,EAAE,MAAM,CAAC;IACZ,WAAW,EAAE,IAAI,CAAC;CACnB;AAUD,eAAO,MAAM,MAAM,2CACwD,CAAC"}

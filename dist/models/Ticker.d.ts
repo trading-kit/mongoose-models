@@ -6,9 +6,5 @@ export interface ITicker extends Document {
     quoteAsset?: string;
     timestamp?: number;
 }
-export declare const Ticker: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<ITicker, {}, {}, {}, mongoose.Document<unknown, {}, ITicker, {}> & ITicker & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>;
+export declare const Ticker: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=Ticker.d.ts.map

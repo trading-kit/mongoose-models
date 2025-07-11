@@ -4,9 +4,5 @@ export interface IDisabledCoin extends Document {
     disabled: boolean;
     exchange: string;
 }
-export declare const DisabledCoin: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<IDisabledCoin, {}, {}, {}, mongoose.Document<unknown, {}, IDisabledCoin, {}> & IDisabledCoin & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>;
+export declare const DisabledCoin: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=DisabledCoin.d.ts.map

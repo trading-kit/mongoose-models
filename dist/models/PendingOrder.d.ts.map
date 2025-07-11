@@ -1,1 +1,1 @@
-{"version":3,"file":"PendingOrder.d.ts","sourceRoot":"","sources":["../../src/models/PendingOrder.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,EAAE,EAAE,QAAQ,EAAU,MAAM,UAAU,CAAC;AAEtD,MAAM,WAAW,aAAc,SAAQ,QAAQ;IAC7C,EAAE,EAAE,MAAM,CAAC;CACZ;AASD,eAAO,MAAM,YAAY;;;;OAC2F,CAAC"}
+{"version":3,"file":"PendingOrder.d.ts","sourceRoot":"","sources":["../../src/models/PendingOrder.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,EAAE,EAAE,QAAQ,EAAU,MAAM,UAAU,CAAC;AAEtD,MAAM,WAAW,aAAc,SAAQ,QAAQ;IAC7C,EAAE,EAAE,MAAM,CAAC;CACZ;AASD,eAAO,MAAM,YAAY,2CAC2F,CAAC"}
