@@ -1,12 +1,20 @@
-import mongoose from 'mongoose'
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose
+export interface ITokenTransfer extends Document {
+  user: string;
+  timeStamp: Date;
+}
 
-const TokenTransferSchema = new Schema({}, { strict: false })
+const TokenTransferSchema: Schema<ITokenTransfer> = new Schema<ITokenTransfer>(
+  {
+    user: { type: String, required: true },
+    timeStamp: { type: Date, required: true },
+  },
+  { strict: false }
+);
 
-//index on user and timeStamp
-TokenTransferSchema.index({ user: -1, timeStamp: -1 })
+// Index on user and timeStamp
+TokenTransferSchema.index({ user: -1, timeStamp: -1 });
 
-const TokenTransfer = mongoose.model('TokenTransfer', TokenTransferSchema)
-
-export default TokenTransfer
+export const TokenTransfer =
+  mongoose.models.TokenTransfer || mongoose.model<ITokenTransfer>("TokenTransfer", TokenTransferSchema);

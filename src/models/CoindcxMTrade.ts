@@ -1,38 +1,30 @@
-import mongoose from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose;
+export interface ICoindcxMarketTrade extends Document {
+  id: string;
+  price?: number;
+  qty?: number;
+  quoteQty?: number;
+  time: number;
+  isBuyerMaker?: boolean;
+  symbol: string;
+}
 
-const CoindcxMarketTradeSchema = new Schema(
+const CoindcxMarketTradeSchema: Schema<ICoindcxMarketTrade> = new Schema<ICoindcxMarketTrade>(
   {
-    id: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    price: Number,
-    qty: Number,
-    quoteQty: Number,
-    time: {
-      type: Number,
-      required: true,
-      index: true,
-    },
-    isBuyerMaker: Boolean,
-    symbol: {
-      type: String,
-      required: true,
-      // index: true,
-    },
+    id: { type: String, required: true, unique: true },
+    price: { type: Number },
+    qty: { type: Number },
+    quoteQty: { type: Number },
+    time: { type: Number, required: true, index: true },
+    isBuyerMaker: { type: Boolean },
+    symbol: { type: String, required: true },
   },
   { strict: false }
 );
 
-//create index on user and timestamp
+// Create index on symbol and time
 CoindcxMarketTradeSchema.index({ symbol: -1, time: -1 });
 
-
-
-//create index on
-const CoindcxMarketTrade = mongoose.model("CoindcxMarketTrade", CoindcxMarketTradeSchema, "coindcxMarketTrades");
-
-export default CoindcxMarketTrade;
+export const CoindcxMarketTrade =
+  mongoose.models.CoindcxMarketTrade || mongoose.model<ICoindcxMarketTrade>("CoindcxMarketTrade", CoindcxMarketTradeSchema, "coindcxMarketTrades");

@@ -1,21 +1,20 @@
-import mongoose from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose;
+export interface ICoindcxTds extends Document {
+  key: string;
+}
 
-const CoindcxTdsSchema = new Schema(
+const CoindcxTdsSchema: Schema<ICoindcxTds> = new Schema(
   {
-  key: {
-    type: String,
-    required: true,
-    unique: true,
-  }
+    key: {
+      type: String,
+      required: true,
+      unique: true,
+    },
   },
   { strict: false }
 );
 
-//create index on
-const CoindcxTds = mongoose.model("CoindcxTds", CoindcxTdsSchema, "coindcxTds");
-
-//delete executed_qty :  0
-
-export default CoindcxTds;
+// Create the model
+export const CoindcxTds =
+  mongoose.models.CoindcxTds || mongoose.model<ICoindcxTds>("CoindcxTds", CoindcxTdsSchema, "coindcxTds");

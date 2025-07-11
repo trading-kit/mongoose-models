@@ -1,17 +1,21 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Document, Schema } from "mongoose";
 
-const BinanceRawTradeSchema: any = new Schema(
+export interface IBinanceRawTrade extends Document {
+  id: number;
+  symbol: string;
+}
+
+const BinanceRawTradeSchema: Schema<IBinanceRawTrade> = new Schema<IBinanceRawTrade>(
   {
-    id: { type: Number },
-    symbol: { type: String },
+    id: { type: Number, required: true },
+    symbol: { type: String, required: true },
   },
   { strict: false }
 );
 
+// Unique index on id and symbol
 BinanceRawTradeSchema.index({ id: -1, symbol: 1 }, { unique: true });
 BinanceRawTradeSchema.index({ symbol: 1 });
 
-const BinanceRawTrade = mongoose.model("BinanceRawTrade", BinanceRawTradeSchema, "binanceRawTrades");
-
-export default BinanceRawTrade;
+export const BinanceRawTrade =
+  mongoose.models.BinanceRawTrade || mongoose.model<IBinanceRawTrade>("BinanceRawTrade", BinanceRawTradeSchema, "binanceRawTrades");

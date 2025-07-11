@@ -1,35 +1,22 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Document, Schema } from "mongoose";
 
-const DisabledCoinSchema = new Schema(
+export interface IDisabledCoin extends Document {
+  coin: string;
+  disabled: boolean;
+  exchange: string;
+}
+
+const DisabledCoinSchema: Schema<IDisabledCoin> = new Schema<IDisabledCoin>(
   {
-    coin: {
-      type: String,
-      unique: true,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    exchange: {
-      type: String,
-      required: true,
-    },
+    coin: { type: String, unique: true },
+    disabled: { type: Boolean, default: false },
+    exchange: { type: String, required: true },
   },
   { strict: false }
 );
 
-//unique on coin and exchange
+// Unique index on coin and exchange
 DisabledCoinSchema.index({ coin: 1, exchange: 1 }, { unique: true });
-const DisabledCoin = mongoose.model("DisabledCoin", DisabledCoinSchema);
 
-// setTimeout(() => {
-//   DisabledCoin.create({
-//     coin: "e4c",
-//     disabled: true,
-//     exchange: "coindcx",
-//   }).then((res) => {
-//     console.log("DisabledCoin", res);
-//   });
-// }, 5000);
-export default DisabledCoin;
+export const DisabledCoin =
+  mongoose.models.DisabledCoin || mongoose.model<IDisabledCoin>("DisabledCoin", DisabledCoinSchema);

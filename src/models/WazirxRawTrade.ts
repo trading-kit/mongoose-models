@@ -1,7 +1,11 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Document, Schema } from "mongoose";
 
-const WazirxRawTradeSchema = new Schema(
+export interface IWazirxRawTrade extends Document {
+  id: number;
+  symbol: string;
+}
+
+const WazirxRawTradeSchema: Schema<IWazirxRawTrade> = new Schema<IWazirxRawTrade>(
   {
     id: { type: Number },
     symbol: { type: String },
@@ -9,9 +13,9 @@ const WazirxRawTradeSchema = new Schema(
   { strict: false }
 );
 
+// Indexes
 WazirxRawTradeSchema.index({ id: -1, symbol: 1 }, { unique: true });
 WazirxRawTradeSchema.index({ symbol: 1 });
 
-const WazirxRawTrade = mongoose.model("WazirxRawTrade", WazirxRawTradeSchema, "wazirxRawTrades");
-
-export default WazirxRawTrade;
+export const WazirxRawTrade =
+  mongoose.models.WazirxRawTrade || mongoose.model<IWazirxRawTrade>("WazirxRawTrade", WazirxRawTradeSchema, "wazirxRawTrades");

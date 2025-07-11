@@ -1,14 +1,15 @@
-import mongoose from 'mongoose'
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose
+export interface IOrder extends Document {
+  source: string;
+}
 
-const OrderSchema = new Schema({
-  source: {
-    type: String,
-    required: true,
-  }
-}, { strict: false })
+const OrderSchema: Schema = new Schema<IOrder>(
+  {
+    source: { type: String, required: true },
+  },
+  { strict: false }
+);
 
-const Order = mongoose.model('Order', OrderSchema)
-
-export default Order
+export const Order =
+  mongoose.models.Order || mongoose.model<IOrder>("Order", OrderSchema);

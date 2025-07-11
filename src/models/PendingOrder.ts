@@ -1,14 +1,15 @@
-import mongoose from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose;
+export interface IPendingOrder extends Document {
+  id: number;
+}
 
-const PendingOrderSchema = new Schema(
+const PendingOrderSchema: Schema<IPendingOrder> = new Schema<IPendingOrder>(
   {
-    id: { unique: true, type: Number },
+    id: { type: Number, unique: true },
   },
   { strict: false }
 );
 
-const PendingOrder = mongoose.model("PendingOrder", PendingOrderSchema, "pendingOrders");
-
-export default PendingOrder;
+export const PendingOrder =
+  mongoose.models.PendingOrder || mongoose.model<IPendingOrder>("PendingOrder", PendingOrderSchema, "pendingOrders");

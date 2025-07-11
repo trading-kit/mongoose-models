@@ -1,18 +1,17 @@
-import mongoose from 'mongoose'
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose
+export interface ISnooze extends Document {
+  key: string;
+  expiry_time: Date;
+}
 
-const SnoozeSchema = new Schema(
+const SnoozeSchema: Schema<ISnooze> = new Schema<ISnooze>(
   {
     key: { type: String, required: true, unique: true },
     expiry_time: { type: Date, required: true, index: true },
   },
   { strict: false }
-)
+);
 
-const Snooze = mongoose.model('Snooze', SnoozeSchema)
-
-// Snooze.deleteMany({}).then(() => {
-//   console.log('Snooze collection cleared')
-// })
-export default Snooze
+export const Snooze =
+  mongoose.models.Snooze || mongoose.model<ISnooze>("Snooze", SnoozeSchema);

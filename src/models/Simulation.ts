@@ -1,9 +1,13 @@
-import mongoose from 'mongoose'
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose
+export interface ISimulation extends Document {
+  // Define any properties you expect in the Simulation document here
+  // For example:
+  // name?: string;
+  // createdAt?: Date;
+}
 
-const SimulationSchema = new Schema({}, { strict: false })
+const SimulationSchema: Schema = new Schema<ISimulation>({}, { strict: false });
 
-const Simulation = mongoose.model('Simulation', SimulationSchema)
-
-export default Simulation
+export const Simulation =
+  mongoose.models.Simulation || mongoose.model<ISimulation>("Simulation", SimulationSchema);

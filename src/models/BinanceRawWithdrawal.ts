@@ -1,17 +1,22 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Document, Schema } from "mongoose";
 
-const BinanceRawWithdrawalSchema: any = new Schema(
+export interface IBinanceRawWithdrawal extends Document {
+  id: string;
+  // Add other fields here if needed
+}
+
+const BinanceRawWithdrawalSchema: Schema<IBinanceRawWithdrawal> = new Schema(
   {
-    id: { type: String, unique: true },
-    // symbol: { type: String },
+    id: { type: String, unique: true, required: true },
+    // Add other fields here if needed
   },
   { strict: false }
 );
 
+// Uncomment and modify indexes as needed
 // BinanceRawWithdrawalSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BinanceRawWithdrawalSchema.index({ id: 1 });
 
-const BinanceRawWithdrawal = mongoose.model("BinanceRawWithdrawal", BinanceRawWithdrawalSchema, "binanceRawWithdrawals");
-
-export default BinanceRawWithdrawal;
+export const BinanceRawWithdrawal =
+  mongoose.models.BinanceRawWithdrawal ||
+  mongoose.model<IBinanceRawWithdrawal>("BinanceRawWithdrawal", BinanceRawWithdrawalSchema, "binanceRawWithdrawals");

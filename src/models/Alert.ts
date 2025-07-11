@@ -1,8 +1,10 @@
-import mongoose from 'mongoose'
-const { Schema } = mongoose
+import mongoose, { Document, Schema } from "mongoose";
 
-const AlertSchema = new Schema({}, { strict: false })
+export interface IAlert extends Document {
+  [key: string]: any; // Allow dynamic properties since the schema is strict: false
+}
 
-const Alert = mongoose.model('Alert', AlertSchema)
+const AlertSchema: Schema = new Schema<IAlert>({}, { strict: false });
 
-export default Alert
+export const Alert =
+  mongoose.models.Alert || mongoose.model<IAlert>("Alert", AlertSchema);

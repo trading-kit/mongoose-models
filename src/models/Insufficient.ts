@@ -1,12 +1,18 @@
-import mongoose from 'mongoose'
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose
+export interface IInsufficient extends Document {
+  profit_per?: number;
+}
 
-const InsufficientSchema = new Schema({}, { strict: false })
+const InsufficientSchema: Schema<IInsufficient> = new Schema<IInsufficient>(
+  {
+    profit_per: { type: Number },
+  },
+  { strict: false }
+);
 
-//index on profit_per
-// InsufficientSchema.index({ profit_per: 1 })
+// Index on profit_per
+InsufficientSchema.index({ profit_per: 1 });
 
-const Insufficient = mongoose.model('Insufficient', InsufficientSchema)
-
-export default Insufficient
+export const Insufficient =
+  mongoose.models.Insufficient || mongoose.model<IInsufficient>("Insufficient", InsufficientSchema);

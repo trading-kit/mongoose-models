@@ -1,11 +1,13 @@
-import mongoose from 'mongoose'
-const { Schema } = mongoose
+import mongoose, { Document, Schema } from "mongoose";
 
-const ArbitrageSchema = new Schema({}, { strict: false })
+export interface IArbitrage extends Document {
+  profit_per?: number;
+}
 
-//index on profit_per
-ArbitrageSchema.index({ profit_per: 1 })
+const ArbitrageSchema: Schema<IArbitrage> = new Schema<IArbitrage>({}, { strict: false });
 
-const Arbitrage = mongoose.model('Arbitrage', ArbitrageSchema)
+// Index on profit_per
+ArbitrageSchema.index({ profit_per: 1 });
 
-export default Arbitrage
+export const Arbitrage =
+  mongoose.models.Arbitrage || mongoose.model<IArbitrage>("Arbitrage", ArbitrageSchema);

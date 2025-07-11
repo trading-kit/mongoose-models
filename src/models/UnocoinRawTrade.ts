@@ -1,7 +1,11 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Document, Schema } from "mongoose";
 
-const UnocoinRawTradeSchema: any = new Schema(
+export interface IUnocoinRawTrade extends Document {
+  id: number;
+  coin: string;
+}
+
+const UnocoinRawTradeSchema: Schema<IUnocoinRawTrade> = new Schema(
   {
     id: { type: Number, unique: true },
     coin: { type: String },
@@ -9,9 +13,8 @@ const UnocoinRawTradeSchema: any = new Schema(
   { strict: false }
 );
 
-// UnocoinRawTradeSchema.index({ id: -1, symbol: 1 }, { unique: true });
+// Index on coin
 UnocoinRawTradeSchema.index({ coin: 1 });
 
-const UnocoinRawTrade = mongoose.model("UnocoinRawTrade", UnocoinRawTradeSchema, "unocoinRawTrades");
-
-export default UnocoinRawTrade;
+export const UnocoinRawTrade =
+  mongoose.models.UnocoinRawTrade || mongoose.model<IUnocoinRawTrade>("UnocoinRawTrade", UnocoinRawTradeSchema, "unocoinRawTrades");

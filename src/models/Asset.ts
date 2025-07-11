@@ -1,29 +1,19 @@
-import mongoose from 'mongoose'
-const { Schema } = mongoose
+import mongoose, { Document, Schema } from "mongoose";
 
-const AssetSchema = new Schema(
-  {
-    depositTo: {
-      type: String,
-      required: true,
-    },
-    asset: {
-      type: String,
-      required: true,
-    },
-    withdrawalFrom: {
-      type: String,
-      required: true,
-    },
-  },
-  { strict: false }
-)
-//create unique index  depositTo  asset and withdrawalFrom
-AssetSchema.index(
-  { depositTo: 1, asset: 1, withdrawalFrom: 1 },
-  { unique: true }
-)
+export interface IAsset extends Document {
+  depositTo: string;
+  asset: string;
+  withdrawalFrom: string;
+}
 
-const Asset = mongoose.model('Asset', AssetSchema)
+const AssetSchema: Schema<IAsset> = new Schema<IAsset>({
+  depositTo: { type: String, required: true },
+  asset: { type: String, required: true },
+  withdrawalFrom: { type: String, required: true },
+});
 
-export default Asset
+// Unique index on depositTo, asset, and withdrawalFrom
+AssetSchema.index({ depositTo: 1, asset: 1, withdrawalFrom: 1 }, { unique: true });
+
+export const Asset =
+  mongoose.models.Asset || mongoose.model<IAsset>("Asset", AssetSchema);

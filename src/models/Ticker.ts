@@ -1,19 +1,23 @@
-import mongoose from 'mongoose'
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose
+export interface ITicker extends Document {
+  pair?: string;
+  exchange?: string;
+  baseAsset?: string;
+  quoteAsset?: string;
+  timestamp?: number;
+}
 
-const TickerSchema = new Schema({}, { strict: false })
+const TickerSchema: Schema<ITicker> = new Schema<ITicker>({}, { strict: false });
 
-//index on pair
-TickerSchema.index({ pair: 1 })
+// Index on pair
+TickerSchema.index({ pair: 1 });
 
-//unique index on exchange and pair
-TickerSchema.index({ exchange: 1, pair: 1 })
+// Unique index on exchange and pair
+TickerSchema.index({ exchange: 1, pair: 1 }, { unique: true });
 
-//index on EXCHANGEBASEASSET QUOTEASSET TIMESTAMP
+// Index on exchange, baseAsset, quoteAsset, and timestamp
+TickerSchema.index({ exchange: 1, baseAsset: 1, quoteAsset: 1, timestamp: 1 });
 
-TickerSchema.index({ exchange: 1, baseAsset: 1, quoteAsset: 1, timestamp: 1 })
-
-const Ticker = mongoose.model('Ticker', TickerSchema)
-
-export default Ticker
+export const Ticker =
+  mongoose.models.Ticker || mongoose.model<ITicker>("Ticker", TickerSchema);

@@ -1,7 +1,25 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Document, Schema } from "mongoose";
 
-const BitgetRawTradeSchema: any = new Schema(
+export interface IBitgetRawTrade extends Document {
+  userId: string;
+  symbol: string;
+  orderId: string;
+  tradeId: string;
+  orderType: string;
+  side: string;
+  priceAvg: number;
+  size: number;
+  amount: number;
+  feeDetail: {
+    deduction: number;
+    totalFee: number;
+  };
+  tradeScope: string;
+  cTime: number;
+  uTime: number;
+}
+
+const BitgetRawTradeSchema: Schema<IBitgetRawTrade> = new Schema<IBitgetRawTrade>(
   {
     userId: { type: String },
     symbol: { type: String },
@@ -14,8 +32,6 @@ const BitgetRawTradeSchema: any = new Schema(
     amount: { type: Number },
     feeDetail: {
       deduction: { type: Number },
-      // feeCoin: { type: String },
-      // totalDeductionFee: { type: String },
       totalFee: { type: Number },
     },
     tradeScope: { type: String },
@@ -25,9 +41,9 @@ const BitgetRawTradeSchema: any = new Schema(
   { strict: false }
 );
 
+// Uncomment or add indexes as needed
 // BitgetRawTradeSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BitgetRawTradeSchema.index({ symbol: 1 });
 
-const BitgetRawTrade = mongoose.model("BitgetRawTrade", BitgetRawTradeSchema, "bitgetRawTrades");
-
-export default BitgetRawTrade;
+export const BitgetRawTrade =
+  mongoose.models.BitgetRawTrade || mongoose.model<IBitgetRawTrade>("BitgetRawTrade", BitgetRawTradeSchema, "bitgetRawTrades");

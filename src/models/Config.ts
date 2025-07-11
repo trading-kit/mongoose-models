@@ -1,14 +1,14 @@
-import mongoose from 'mongoose'
-const { Schema } = mongoose
+import mongoose, { Document, Schema } from "mongoose";
 
-const ConfigSchema = new Schema({
-  app: {
-    type: String,
-    required: true,
-  },
-  mmLossAlertTime: Number
-}, { strict: false })
+export interface IConfig extends Document {
+  app: string;
+  mmLossAlertTime?: number;
+}
 
-const Config = mongoose.model('Config', ConfigSchema, 'config')
+const ConfigSchema: Schema = new Schema<IConfig>({
+  app: { type: String, required: true },
+  mmLossAlertTime: { type: Number },
+}, { strict: false });
 
-export default Config
+export const Config =
+  mongoose.models.Config || mongoose.model<IConfig>("Config", ConfigSchema, "config");

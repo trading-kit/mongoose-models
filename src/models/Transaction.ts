@@ -1,9 +1,12 @@
-import mongoose from 'mongoose'
+import mongoose, { Document, Schema } from "mongoose";
 
-const { Schema } = mongoose
+export interface ITransaction extends Document {
+  // Define the fields you expect in the Transaction model here
+  // For example:
+  [key: string]: any; // Since the schema is strict: false, it allows dynamic fields
+}
 
-const TransactionSchema = new Schema({}, { strict: false })
+const TransactionSchema: Schema = new Schema<ITransaction>({}, { strict: false });
 
-const Transaction = mongoose.model('Transaction', TransactionSchema)
-
-export default Transaction
+export const Transaction =
+  mongoose.models.Transaction || mongoose.model<ITransaction>("Transaction", TransactionSchema);

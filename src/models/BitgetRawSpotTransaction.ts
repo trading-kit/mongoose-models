@@ -1,7 +1,16 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Document, Schema } from "mongoose";
 
-const BitgetRawSpotTransactionSchema: any = new Schema(
+export interface IBitgetRawSpotTransaction extends Document {
+  id: string;
+  coin: string;
+  spotTaxType: string;
+  amount: number;
+  fee: number;
+  balance: number;
+  ts: number;
+}
+
+const BitgetRawSpotTransactionSchema: Schema = new Schema<IBitgetRawSpotTransaction>(
   {
     id: { type: String, unique: true },
     coin: { type: String },
@@ -14,9 +23,10 @@ const BitgetRawSpotTransactionSchema: any = new Schema(
   { strict: false }
 );
 
+// Uncomment and use indexes if needed
 // BitgetRawSpotTransactionSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BitgetRawSpotTransactionSchema.index({ symbol: 1 });
 
-const BitgetRawSpotTransaction = mongoose.model("BitgetRawSpotTransaction", BitgetRawSpotTransactionSchema, "bitgetRawSpotTransactions");
-
-export default BitgetRawSpotTransaction;
+export const BitgetRawSpotTransaction =
+  mongoose.models.BitgetRawSpotTransaction ||
+  mongoose.model<IBitgetRawSpotTransaction>("BitgetRawSpotTransaction", BitgetRawSpotTransactionSchema, "bitgetRawSpotTransactions");
