@@ -9,7 +9,7 @@ export interface IUnocoinRawTransaction extends Document {
 const UnocoinRawTransactionSchema: Schema<IUnocoinRawTransaction> = new Schema<IUnocoinRawTransaction>(
   {
     coin: { type: String, required: true },
-    uuid: { type: String, required: true, unique: true },
+    uuid: { type: String, required: true },
     timestamp: { type: Number }, // Add this if `timestamp` is part of the schema
   },
   { strict: false }
