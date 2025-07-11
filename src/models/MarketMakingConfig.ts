@@ -24,6 +24,5 @@ const MarketMakingConfigSchema: Schema = new Schema<IMarketMakingConfig>({
 MarketMakingConfigSchema.index({ exchange: 1, symbol: 1 }, { unique: true });
 MarketMakingConfigSchema.index({ exchange: 1, user: 1 });
 
-const MarketMakingConfig = mongoose.models.MarketMakingConfig || mongoose.model<IMarketMakingConfig>("MarketMakingConfig", MarketMakingConfigSchema);
-
-export default MarketMakingConfig;
+export const MarketMakingConfig =
+  mongoose.models.MarketMakingConfig || mongoose.model<IMarketMakingConfig>("MarketMakingConfig", MarketMakingConfigSchema);
