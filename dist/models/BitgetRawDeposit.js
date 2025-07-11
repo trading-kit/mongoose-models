@@ -8,7 +8,5 @@ const BitgetRawDepositSchema = new Schema({
     balance: { type: Number },
     ts: { type: Number },
 }, { strict: false });
-// Indexes
-BitgetRawDepositSchema.index({ orderId: 1 }, { unique: true });
 export const BitgetRawDeposit = mongoose.models.BitgetRawDeposit || mongoose.model("BitgetRawDeposit", BitgetRawDepositSchema, "bitgetRawDeposits");
 //# sourceMappingURL=BitgetRawDeposit.js.map
