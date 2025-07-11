@@ -1,3 +1,7 @@
-import mongoose from "mongoose";
-declare const UnocoinRawTransaction: mongoose.Model<any, unknown, unknown, unknown, any, any>;
-export default UnocoinRawTransaction;
+import mongoose, { Document } from "mongoose";
+export interface IUnocoinRawTransaction extends Document {
+    coin: string;
+    uuid: string;
+    timestamp?: number;
+}
+export declare const UnocoinRawTransaction: mongoose.Model<any, {}, {}, {}, any, any>;

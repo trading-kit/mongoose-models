@@ -1,12 +1,10 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const UnocoinRawTransactionSchema = new Schema({
-    // id: { type: Number },
-    coin: { type: String },
-    uuid: { type: String },
+    coin: { type: String, required: true },
+    uuid: { type: String, required: true, unique: true },
+    timestamp: { type: Number }, // Add this if `timestamp` is part of the schema
 }, { strict: false });
-// UnocoinRawTransactionSchema.index({ id: -1, symbol: 1 }, { unique: true });
 UnocoinRawTransactionSchema.index({ uuid: 1 }, { unique: true });
 UnocoinRawTransactionSchema.index({ timestamp: -1 });
-const UnocoinRawTransaction = mongoose.model("UnocoinRawTransaction", UnocoinRawTransactionSchema, "unocoinRawTransactions");
-export default UnocoinRawTransaction;
+export const UnocoinRawTransaction = mongoose.models.UnocoinRawTransaction ||
+    mongoose.model("UnocoinRawTransaction", UnocoinRawTransactionSchema, "unocoinRawTransactions");

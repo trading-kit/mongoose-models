@@ -2,9 +2,11 @@ import mongoose, { Schema } from "mongoose";
 const LossAlertSchema = new Schema({
     user: {
         type: String,
+        required: true,
     },
     timestamp: {
         type: Number,
+        required: true,
     },
     exchange: {
         type: String,
@@ -12,6 +14,7 @@ const LossAlertSchema = new Schema({
     },
     type: {
         type: String,
+        required: true,
     },
 }, { strict: false });
 // Index
