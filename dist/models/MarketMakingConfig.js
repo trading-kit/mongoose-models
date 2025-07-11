@@ -1,6 +1,5 @@
 import mongoose, { Schema } from "mongoose";
 const MarketMakingConfigSchema = new Schema({
-    index: { type: Number, required: true },
     symbol: { type: String, required: true },
     baseSpreadPercent: { type: Number, required: true },
     orderQty: { type: Number, required: true },

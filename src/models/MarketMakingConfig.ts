@@ -1,7 +1,6 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface IMarketMakingConfig extends Document {
-  index: number;
   symbol: string;
   baseSpreadPercent: number;
   orderQty: number;
@@ -11,7 +10,6 @@ export interface IMarketMakingConfig extends Document {
 }
 
 const MarketMakingConfigSchema: Schema = new Schema<IMarketMakingConfig>({
-  index: { type: Number, required: true },
   symbol: { type: String, required: true },
   baseSpreadPercent: { type: Number, required: true },
   orderQty: { type: Number, required: true },
