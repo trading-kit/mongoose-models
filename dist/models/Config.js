@@ -1,11 +1,6 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const ConfigSchema = new Schema({
-    app: {
-        type: String,
-        required: true,
-    },
-    mmLossAlertTime: Number
+    app: { type: String, required: true },
+    mmLossAlertTime: { type: Number },
 }, { strict: false });
-const Config = mongoose.model('Config', ConfigSchema, 'config');
-export default Config;
+export const Config = mongoose.models.Config || mongoose.model("Config", ConfigSchema, "config");

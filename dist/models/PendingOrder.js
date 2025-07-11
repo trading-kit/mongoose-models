@@ -1,7 +1,5 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const PendingOrderSchema = new Schema({
-    id: { unique: true, type: Number },
+    id: { type: Number, unique: true },
 }, { strict: false });
-const PendingOrder = mongoose.model("PendingOrder", PendingOrderSchema, "pendingOrders");
-export default PendingOrder;
+export const PendingOrder = mongoose.models.PendingOrder || mongoose.model("PendingOrder", PendingOrderSchema, "pendingOrders");

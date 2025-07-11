@@ -1,3 +1,11 @@
-import mongoose from "mongoose";
-declare const BitgetRawP2P: mongoose.Model<any, unknown, unknown, unknown, any, any>;
-export default BitgetRawP2P;
+import mongoose, { Document } from "mongoose";
+export interface IBitgetRawP2P extends Document {
+    id: string;
+    coin: string;
+    spotTaxType: string;
+    amount: number;
+    fee: number;
+    balance: number;
+    ts: number;
+}
+export declare const BitgetRawP2P: mongoose.Model<any, {}, {}, {}, any, any>;

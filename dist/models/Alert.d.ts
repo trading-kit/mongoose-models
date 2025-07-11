@@ -1,13 +1,5 @@
-import mongoose from 'mongoose';
-declare const Alert: mongoose.Model<{}, {}, {}, {}, mongoose.Document<unknown, {}, {}, {}> & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
-    strict: false;
-}, {}, mongoose.Document<unknown, {}, mongoose.FlatRecord<{}>, {}> & mongoose.FlatRecord<{}> & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}>>;
-export default Alert;
+import mongoose, { Document } from "mongoose";
+export interface IAlert extends Document {
+    [key: string]: any;
+}
+export declare const Alert: mongoose.Model<any, {}, {}, {}, any, any>;

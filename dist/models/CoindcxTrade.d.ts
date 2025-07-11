@@ -1,85 +1,15 @@
-import mongoose from "mongoose";
-declare const CoindcxTrade: mongoose.Model<{
+import mongoose, { Document } from "mongoose";
+export interface ICoindcxTrade extends Document {
     id: number;
-    processed: any;
-    symbol?: string | null | undefined;
-    price?: string | null | undefined;
-    side?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: string | null | undefined;
-    fee_amount?: string | null | undefined;
-    ecode?: string | null | undefined;
-    fee_rate?: number | null | undefined;
-    order_id?: string | null | undefined;
-}, {}, {}, {}, mongoose.Document<unknown, {}, {
-    id: number;
-    processed: any;
-    symbol?: string | null | undefined;
-    price?: string | null | undefined;
-    side?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: string | null | undefined;
-    fee_amount?: string | null | undefined;
-    ecode?: string | null | undefined;
-    fee_rate?: number | null | undefined;
-    order_id?: string | null | undefined;
-}, {}> & {
-    id: number;
-    processed: any;
-    symbol?: string | null | undefined;
-    price?: string | null | undefined;
-    side?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: string | null | undefined;
-    fee_amount?: string | null | undefined;
-    ecode?: string | null | undefined;
-    fee_rate?: number | null | undefined;
-    order_id?: string | null | undefined;
-} & {
-    _id: mongoose.Types.ObjectId;
-} & {
-    __v: number;
-}, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
-    strict: false;
-}, {
-    id: number;
-    processed: any;
-    symbol?: string | null | undefined;
-    price?: string | null | undefined;
-    side?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: string | null | undefined;
-    fee_amount?: string | null | undefined;
-    ecode?: string | null | undefined;
-    fee_rate?: number | null | undefined;
-    order_id?: string | null | undefined;
-}, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
-    id: number;
-    processed: any;
-    symbol?: string | null | undefined;
-    price?: string | null | undefined;
-    side?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: string | null | undefined;
-    fee_amount?: string | null | undefined;
-    ecode?: string | null | undefined;
-    fee_rate?: number | null | undefined;
-    order_id?: string | null | undefined;
-}>, {}> & mongoose.FlatRecord<{
-    id: number;
-    processed: any;
-    symbol?: string | null | undefined;
-    price?: string | null | undefined;
-    side?: string | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: string | null | undefined;
-    fee_amount?: string | null | undefined;
-    ecode?: string | null | undefined;
-    fee_rate?: number | null | undefined;
-    order_id?: string | null | undefined;
-}> & {
-    _id: mongoose.Types.ObjectId;
-} & {
-    __v: number;
-}>>;
-export default CoindcxTrade;
+    side?: string;
+    fee_amount?: string;
+    ecode?: string;
+    quantity?: string;
+    price?: string;
+    symbol?: string;
+    timestamp?: number;
+    fee_rate?: number;
+    order_id?: string;
+    processed?: boolean;
+}
+export declare const CoindcxTrade: mongoose.Model<any, {}, {}, {}, any, any>;

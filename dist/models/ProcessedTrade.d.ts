@@ -1,5 +1,5 @@
-import mongoose, { Document, Model } from "mongoose";
-interface IProcessedTrade extends Document {
+import mongoose, { Document } from "mongoose";
+export interface IProcessedTrade extends Document {
     user: string;
     id: number;
     order_id: string;
@@ -27,15 +27,4 @@ interface IProcessedTrade extends Document {
     quoteQty: number;
     tds: number;
 }
-declare const ProcessedTradeSchema: mongoose.Schema<IProcessedTrade, mongoose.Model<IProcessedTrade, any, any, any, mongoose.Document<unknown, any, IProcessedTrade, any> & IProcessedTrade & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, IProcessedTrade, mongoose.Document<unknown, {}, mongoose.FlatRecord<IProcessedTrade>, {}> & mongoose.FlatRecord<IProcessedTrade> & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}>;
-declare const ProcessedTrade: Model<IProcessedTrade>;
-export default ProcessedTrade;
-export { IProcessedTrade, ProcessedTradeSchema, ProcessedTrade };
+export declare const ProcessedTrade: mongoose.Model<any, {}, {}, {}, any, any>;

@@ -1,5 +1,5 @@
-import { Document, Model } from "mongoose";
-interface ICalculatorState extends Document {
+import mongoose, { Document } from "mongoose";
+export interface ICalculatorState extends Document {
     user: string;
     symbol: string;
     inventory: {
@@ -25,6 +25,4 @@ interface ICalculatorState extends Document {
     lastProcessedTradeId: number;
     lastProcessedTimestamp: number;
 }
-declare const CalculatorState: Model<ICalculatorState>;
-export default CalculatorState;
-export type { ICalculatorState };
+export declare const CalculatorState: mongoose.Model<any, {}, {}, {}, any, any>;

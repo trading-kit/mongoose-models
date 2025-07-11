@@ -1,10 +1,5 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const OrderSchema = new Schema({
-    source: {
-        type: String,
-        required: true,
-    }
+    source: { type: String, required: true },
 }, { strict: false });
-const Order = mongoose.model('Order', OrderSchema);
-export default Order;
+export const Order = mongoose.models.Order || mongoose.model("Order", OrderSchema);

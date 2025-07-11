@@ -1,13 +1,10 @@
-import mongoose from "mongoose";
-declare const Trade: mongoose.Model<{}, {}, {}, {}, mongoose.Document<unknown, {}, {}, {}> & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
-    strict: false;
-}, {}, mongoose.Document<unknown, {}, mongoose.FlatRecord<{}>, {}> & mongoose.FlatRecord<{}> & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}>>;
-export default Trade;
+import mongoose, { Document } from "mongoose";
+export interface ITrade extends Document {
+    id: string;
+    platform?: string;
+    symbol?: string;
+    time?: Date;
+    perDiff?: number;
+    profit?: number;
+}
+export declare const Trade: mongoose.Model<any, {}, {}, {}, any, any>;

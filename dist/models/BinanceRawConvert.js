@@ -1,10 +1,8 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const BinanceRawConvertSchema = new Schema({
     orderId: { type: Number, unique: true },
-    // symbol: { type: String },
 }, { strict: false });
+// Uncomment and use indexes if needed
 // BinanceRawConvertSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BinanceRawConvertSchema.index({ id: 1 });
-const BinanceRawConvert = mongoose.model("BinanceRawConvert", BinanceRawConvertSchema, "binanceRawConverts");
-export default BinanceRawConvert;
+export const BinanceRawConvert = mongoose.models.BinanceRawConvert || mongoose.model("BinanceRawConvert", BinanceRawConvertSchema, "binanceRawConverts");

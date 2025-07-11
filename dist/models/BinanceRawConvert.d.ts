@@ -1,3 +1,5 @@
-import mongoose from "mongoose";
-declare const BinanceRawConvert: mongoose.Model<any, unknown, unknown, unknown, any, any>;
-export default BinanceRawConvert;
+import mongoose, { Document } from "mongoose";
+export interface IBinanceRawConvert extends Document {
+    orderId: number;
+}
+export declare const BinanceRawConvert: mongoose.Model<any, {}, {}, {}, any, any>;

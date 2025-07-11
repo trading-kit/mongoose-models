@@ -1,15 +1,13 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const BitgetRawDepositSchema = new Schema({
-    orderId: { type: String, unique: true },
-    // coin: { type: String },
-    // spotTaxType: { type: String },
-    // amount: { type: Number },
-    // fee: { type: Number },
-    // balance: { type: Number },
-    // ts: { type: Number },
+    orderId: { type: String, unique: true, required: true },
+    coin: { type: String },
+    spotTaxType: { type: String },
+    amount: { type: Number },
+    fee: { type: Number },
+    balance: { type: Number },
+    ts: { type: Number },
 }, { strict: false });
-// BitgetRawDepositSchema.index({ id: -1, symbol: 1 }, { unique: true });
-// BitgetRawDepositSchema.index({ symbol: 1 });
-const BitgetRawDeposit = mongoose.model("BitgetRawDeposit", BitgetRawDepositSchema, "bitgetRawDeposits");
-export default BitgetRawDeposit;
+// Indexes
+BitgetRawDepositSchema.index({ orderId: 1 }, { unique: true });
+export const BitgetRawDeposit = mongoose.models.BitgetRawDeposit || mongoose.model("BitgetRawDeposit", BitgetRawDepositSchema, "bitgetRawDeposits");

@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const BinanceRawMarginTradeSchema = new Schema({
-    id: { type: Number },
-    symbol: { type: String },
+    id: { type: Number, required: true },
+    symbol: { type: String, required: true },
 }, { strict: false });
+// Unique index on id and symbol
 BinanceRawMarginTradeSchema.index({ id: -1, symbol: 1 }, { unique: true });
 BinanceRawMarginTradeSchema.index({ symbol: 1 });
-const BinanceRawMarginTrade = mongoose.model("BinanceRawMarginTrade", BinanceRawMarginTradeSchema, "binanceRawMarginTrades");
-export default BinanceRawMarginTrade;
+export const BinanceRawMarginTrade = mongoose.models.BinanceRawMarginTrade ||
+    mongoose.model("BinanceRawMarginTrade", BinanceRawMarginTradeSchema, "binanceRawMarginTrades");

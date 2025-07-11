@@ -1,3 +1,5 @@
-import mongoose from "mongoose";
-declare const BinanceRawWithdrawal: mongoose.Model<any, unknown, unknown, unknown, any, any>;
-export default BinanceRawWithdrawal;
+import mongoose, { Document } from "mongoose";
+export interface IBinanceRawWithdrawal extends Document {
+    id: string;
+}
+export declare const BinanceRawWithdrawal: mongoose.Model<any, {}, {}, {}, any, any>;

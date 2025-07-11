@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const BitgetRawTradeSchema = new Schema({
     userId: { type: String },
     symbol: { type: String },
@@ -12,15 +11,13 @@ const BitgetRawTradeSchema = new Schema({
     amount: { type: Number },
     feeDetail: {
         deduction: { type: Number },
-        // feeCoin: { type: String },
-        // totalDeductionFee: { type: String },
         totalFee: { type: Number },
     },
     tradeScope: { type: String },
     cTime: { type: Number },
     uTime: { type: Number },
 }, { strict: false });
+// Uncomment or add indexes as needed
 // BitgetRawTradeSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BitgetRawTradeSchema.index({ symbol: 1 });
-const BitgetRawTrade = mongoose.model("BitgetRawTrade", BitgetRawTradeSchema, "bitgetRawTrades");
-export default BitgetRawTrade;
+export const BitgetRawTrade = mongoose.models.BitgetRawTrade || mongoose.model("BitgetRawTrade", BitgetRawTradeSchema, "bitgetRawTrades");

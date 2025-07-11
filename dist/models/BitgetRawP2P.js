@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const BitgetRawP2PSchema = new Schema({
     id: { type: String, unique: true },
     coin: { type: String },
@@ -8,8 +7,8 @@ const BitgetRawP2PSchema = new Schema({
     fee: { type: Number },
     balance: { type: Number },
     ts: { type: Number },
-}, { strict: false });
+});
+// Uncomment and use indexes if needed
 // BitgetRawP2PSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BitgetRawP2PSchema.index({ symbol: 1 });
-const BitgetRawP2P = mongoose.model("BitgetRawP2P", BitgetRawP2PSchema, "BitgetRawP2Ps");
-export default BitgetRawP2P;
+export const BitgetRawP2P = mongoose.models.BitgetRawP2P || mongoose.model("BitgetRawP2P", BitgetRawP2PSchema, "BitgetRawP2Ps");

@@ -1,28 +1,13 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const CoindcxMarketTradeSchema = new Schema({
-    id: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    price: Number,
-    qty: Number,
-    quoteQty: Number,
-    time: {
-        type: Number,
-        required: true,
-        index: true,
-    },
-    isBuyerMaker: Boolean,
-    symbol: {
-        type: String,
-        required: true,
-        // index: true,
-    },
+    id: { type: String, required: true, unique: true },
+    price: { type: Number },
+    qty: { type: Number },
+    quoteQty: { type: Number },
+    time: { type: Number, required: true, index: true },
+    isBuyerMaker: { type: Boolean },
+    symbol: { type: String, required: true },
 }, { strict: false });
-//create index on user and timestamp
+// Create index on symbol and time
 CoindcxMarketTradeSchema.index({ symbol: -1, time: -1 });
-//create index on
-const CoindcxMarketTrade = mongoose.model("CoindcxMarketTrade", CoindcxMarketTradeSchema, "coindcxMarketTrades");
-export default CoindcxMarketTrade;
+export const CoindcxMarketTrade = mongoose.models.CoindcxMarketTrade || mongoose.model("CoindcxMarketTrade", CoindcxMarketTradeSchema, "coindcxMarketTrades");

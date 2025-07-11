@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
-const InsufficientSchema = new Schema({}, { strict: false });
-//index on profit_per
-// InsufficientSchema.index({ profit_per: 1 })
-const Insufficient = mongoose.model('Insufficient', InsufficientSchema);
-export default Insufficient;
+import mongoose, { Schema } from "mongoose";
+const InsufficientSchema = new Schema({
+    profit_per: { type: Number },
+}, { strict: false });
+// Index on profit_per
+InsufficientSchema.index({ profit_per: 1 });
+export const Insufficient = mongoose.models.Insufficient || mongoose.model("Insufficient", InsufficientSchema);

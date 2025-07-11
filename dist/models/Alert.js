@@ -1,5 +1,3 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const AlertSchema = new Schema({}, { strict: false });
-const Alert = mongoose.model('Alert', AlertSchema);
-export default Alert;
+export const Alert = mongoose.models.Alert || mongoose.model("Alert", AlertSchema);

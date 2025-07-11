@@ -1,3 +1,5 @@
-import mongoose from "mongoose";
-declare const BinanceRawDeposit: mongoose.Model<any, unknown, unknown, unknown, any, any>;
-export default BinanceRawDeposit;
+import mongoose, { Document } from "mongoose";
+export interface IBinanceRawDeposit extends Document {
+    id: number;
+}
+export declare const BinanceRawDeposit: mongoose.Model<any, {}, {}, {}, any, any>;

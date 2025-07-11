@@ -1,13 +1,10 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const CoindcxTdsSchema = new Schema({
     key: {
         type: String,
         required: true,
         unique: true,
-    }
+    },
 }, { strict: false });
-//create index on
-const CoindcxTds = mongoose.model("CoindcxTds", CoindcxTdsSchema, "coindcxTds");
-//delete executed_qty :  0
-export default CoindcxTds;
+// Create the model
+export const CoindcxTds = mongoose.models.CoindcxTds || mongoose.model("CoindcxTds", CoindcxTdsSchema, "coindcxTds");

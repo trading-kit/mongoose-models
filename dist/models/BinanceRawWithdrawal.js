@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const BinanceRawWithdrawalSchema = new Schema({
-    id: { type: String, unique: true },
-    // symbol: { type: String },
+    id: { type: String, unique: true, required: true },
+    // Add other fields here if needed
 }, { strict: false });
+// Uncomment and modify indexes as needed
 // BinanceRawWithdrawalSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BinanceRawWithdrawalSchema.index({ id: 1 });
-const BinanceRawWithdrawal = mongoose.model("BinanceRawWithdrawal", BinanceRawWithdrawalSchema, "binanceRawWithdrawals");
-export default BinanceRawWithdrawal;
+export const BinanceRawWithdrawal = mongoose.models.BinanceRawWithdrawal ||
+    mongoose.model("BinanceRawWithdrawal", BinanceRawWithdrawalSchema, "binanceRawWithdrawals");

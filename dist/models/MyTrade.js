@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const MyTradeSchema = new Schema({}, { strict: false });
-const MyTrade = mongoose.model("MyTrade", MyTradeSchema, "myTrades");
-export default MyTrade;
+export const MyTrade = mongoose.models.MyTrade || mongoose.model("MyTrade", MyTradeSchema, "myTrades");

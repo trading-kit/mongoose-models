@@ -1,55 +1,11 @@
-import mongoose from "mongoose";
-declare const CoinswitchTrade: mongoose.Model<{
-    id?: string | null | undefined;
-    price?: number | null | undefined;
-    executed_qty?: number | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-}, {}, {}, {}, mongoose.Document<unknown, {}, {
-    id?: string | null | undefined;
-    price?: number | null | undefined;
-    executed_qty?: number | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-}, {}> & {
-    id?: string | null | undefined;
-    price?: number | null | undefined;
-    executed_qty?: number | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-} & {
-    _id: mongoose.Types.ObjectId;
-} & {
-    __v: number;
-}, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
-    strict: false;
-}, {
-    id?: string | null | undefined;
-    price?: number | null | undefined;
-    executed_qty?: number | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-}, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
-    id?: string | null | undefined;
-    price?: number | null | undefined;
-    executed_qty?: number | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-}>, {}> & mongoose.FlatRecord<{
-    id?: string | null | undefined;
-    price?: number | null | undefined;
-    executed_qty?: number | null | undefined;
-    timestamp?: number | null | undefined;
-    quantity?: number | null | undefined;
-    fee_amount?: number | null | undefined;
-}> & {
-    _id: mongoose.Types.ObjectId;
-} & {
-    __v: number;
-}>>;
-export default CoinswitchTrade;
+import mongoose, { Document } from "mongoose";
+export interface ICoinswitchTrade extends Document {
+    price: number;
+    quantity: number;
+    fee_amount: number;
+    timestamp: number;
+    id: string;
+    executed_qty: number;
+    user?: string;
+}
+export declare const CoinswitchTrade: mongoose.Model<any, {}, {}, {}, any, any>;

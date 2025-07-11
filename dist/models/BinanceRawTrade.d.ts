@@ -1,3 +1,6 @@
-import mongoose from "mongoose";
-declare const BinanceRawTrade: mongoose.Model<any, unknown, unknown, unknown, any, any>;
-export default BinanceRawTrade;
+import mongoose, { Document } from "mongoose";
+export interface IBinanceRawTrade extends Document {
+    id: number;
+    symbol: string;
+}
+export declare const BinanceRawTrade: mongoose.Model<any, {}, {}, {}, any, any>;

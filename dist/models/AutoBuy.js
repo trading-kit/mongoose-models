@@ -1,22 +1,16 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const AutoBuySchema = new Schema({
     completed: {
         type: Boolean,
         default: false,
     },
+    coin: {
+        type: String,
+    },
+    timestamp: {
+        type: Date,
+    },
 }, { strict: false });
-//index on coin_completed_timestamp
+// Index on coin, completed, and timestamp
 AutoBuySchema.index({ coin: -1, completed: -1, timestamp: -1 });
-const AutoBuy = mongoose.model('AutoBuy', AutoBuySchema, 'autoOn');
-// AutoBuy.updateMany(
-//   {},
-//   {
-//     $set: {
-//       completed: true,
-//     },
-//   }
-// ).then((x) => {
-//   console.log('updated', x)
-// })
-export default AutoBuy;
+export const AutoBuy = mongoose.models.AutoBuy || mongoose.model("AutoBuy", AutoBuySchema, "autoOn");

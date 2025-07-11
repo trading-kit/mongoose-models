@@ -1,5 +1,3 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const TransactionSchema = new Schema({}, { strict: false });
-const Transaction = mongoose.model('Transaction', TransactionSchema);
-export default Transaction;
+export const Transaction = mongoose.models.Transaction || mongoose.model("Transaction", TransactionSchema);

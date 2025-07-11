@@ -1,13 +1,6 @@
-import mongoose from 'mongoose';
-declare const TokenTransfer: mongoose.Model<{}, {}, {}, {}, mongoose.Document<unknown, {}, {}, {}> & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
-    strict: false;
-}, {}, mongoose.Document<unknown, {}, mongoose.FlatRecord<{}>, {}> & mongoose.FlatRecord<{}> & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}>>;
-export default TokenTransfer;
+import mongoose, { Document } from "mongoose";
+export interface ITokenTransfer extends Document {
+    user: string;
+    timeStamp: Date;
+}
+export declare const TokenTransfer: mongoose.Model<any, {}, {}, {}, any, any>;

@@ -1,5 +1,3 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const SimulationSchema = new Schema({}, { strict: false });
-const Simulation = mongoose.model('Simulation', SimulationSchema);
-export default Simulation;
+export const Simulation = mongoose.models.Simulation || mongoose.model("Simulation", SimulationSchema);
