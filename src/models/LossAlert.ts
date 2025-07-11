@@ -1,16 +1,21 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface ILossAlert extends Document {
-  [key: string]: any; // Allow dynamic properties since the schema is strict: false
+  user: string;
+  timestamp: number;
+  exchange: string;
+  type: string; // e.g., "loss", "profit", etc.
 }
 
 const LossAlertSchema: Schema = new Schema<ILossAlert>(
   {
     user: {
       type: String,
+      required: true,
     },
     timestamp: {
       type: Number,
+      required: true,
     },
     exchange: {
       type: String,
@@ -18,6 +23,7 @@ const LossAlertSchema: Schema = new Schema<ILossAlert>(
     },
     type: {
       type: String,
+      required: true,
     },
   },
   { strict: false }
@@ -26,5 +32,4 @@ const LossAlertSchema: Schema = new Schema<ILossAlert>(
 // Index
 LossAlertSchema.index({ exchange: 1, user: 1 }, { unique: true });
 
-export const LossAlert =
-  mongoose.models.LossAlert || mongoose.model<ILossAlert>("LossAlert", LossAlertSchema);
+export const LossAlert = mongoose.models.LossAlert || mongoose.model<ILossAlert>("LossAlert", LossAlertSchema);
