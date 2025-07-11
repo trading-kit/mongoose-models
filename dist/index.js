@@ -21,6 +21,7 @@ export * from "./models/Config";
 export * from "./models/DisabledCoin";
 export * from "./models/FlexibleLoan";
 export * from "./models/Insufficient";
+export * from "./models/LossAlert";
 export * from "./models/LossAlertThreshold";
 export * from "./models/MarketMakingConfig";
 export * from "./models/MyTrade";
