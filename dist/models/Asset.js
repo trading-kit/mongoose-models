@@ -7,3 +7,4 @@ const AssetSchema = new Schema({
 // Unique index on depositTo, asset, and withdrawalFrom
 AssetSchema.index({ depositTo: 1, asset: 1, withdrawalFrom: 1 }, { unique: true });
 export const Asset = mongoose.models.Asset || mongoose.model("Asset", AssetSchema);
+//# sourceMappingURL=Asset.js.map

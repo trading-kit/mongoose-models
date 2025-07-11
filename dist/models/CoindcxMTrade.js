@@ -11,3 +11,4 @@ const CoindcxMarketTradeSchema = new Schema({
 // Create index on symbol and time
 CoindcxMarketTradeSchema.index({ symbol: -1, time: -1 });
 export const CoindcxMarketTrade = mongoose.models.CoindcxMarketTrade || mongoose.model("CoindcxMarketTrade", CoindcxMarketTradeSchema, "coindcxMarketTrades");
+//# sourceMappingURL=CoindcxMTrade.js.map

@@ -8,4 +8,9 @@ export interface ICoinswitchTrade extends Document {
     executed_qty: number;
     user?: string;
 }
-export declare const CoinswitchTrade: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const CoinswitchTrade: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<ICoinswitchTrade, {}, {}, {}, mongoose.Document<unknown, {}, ICoinswitchTrade, {}> & ICoinswitchTrade & Required<{
+    _id: unknown;
+}> & {
+    __v: number;
+}, any>;
+//# sourceMappingURL=CoinswitchTrade.d.ts.map

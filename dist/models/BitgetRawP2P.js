@@ -12,3 +12,4 @@ const BitgetRawP2PSchema = new Schema({
 // BitgetRawP2PSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BitgetRawP2PSchema.index({ symbol: 1 });
 export const BitgetRawP2P = mongoose.models.BitgetRawP2P || mongoose.model("BitgetRawP2P", BitgetRawP2PSchema, "BitgetRawP2Ps");
+//# sourceMappingURL=BitgetRawP2P.js.map

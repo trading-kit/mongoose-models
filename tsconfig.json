@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "ESNext",
+    "outDir": "dist",
+    "rootDir": "src",
     "declaration": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "moduleResolution": "Node",
+    "declarationMap": true,
+    "sourceMap": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "strict": true
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   },
   "include": ["src"]
 }

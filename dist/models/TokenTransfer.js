@@ -6,3 +6,4 @@ const TokenTransferSchema = new Schema({
 // Index on user and timeStamp
 TokenTransferSchema.index({ user: -1, timeStamp: -1 });
 export const TokenTransfer = mongoose.models.TokenTransfer || mongoose.model("TokenTransfer", TokenTransferSchema);
+//# sourceMappingURL=TokenTransfer.js.map

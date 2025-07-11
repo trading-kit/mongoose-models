@@ -13,3 +13,4 @@ CoinswitchTradeSchema.index({ id: -1, user: -1 }, { unique: true });
 CoinswitchTradeSchema.index({ user: -1, timestamp: -1 });
 CoinswitchTradeSchema.index({ timestamp: -1 });
 export const CoinswitchTrade = mongoose.models.CoinswitchTrade || mongoose.model("CoinswitchTrade", CoinswitchTradeSchema, "coinswitchTrades");
+//# sourceMappingURL=CoinswitchTrade.js.map

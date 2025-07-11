@@ -4,3 +4,4 @@ const ConfigSchema = new Schema({
     mmLossAlertTime: { type: Number },
 }, { strict: false });
 export const Config = mongoose.models.Config || mongoose.model("Config", ConfigSchema, "config");
+//# sourceMappingURL=Config.js.map

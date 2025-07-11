@@ -25,4 +25,9 @@ export interface ICalculatorState extends Document {
     lastProcessedTradeId: number;
     lastProcessedTimestamp: number;
 }
-export declare const CalculatorState: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const CalculatorState: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<ICalculatorState, {}, {}, {}, mongoose.Document<unknown, {}, ICalculatorState, {}> & ICalculatorState & Required<{
+    _id: unknown;
+}> & {
+    __v: number;
+}, any>;
+//# sourceMappingURL=CalculatorState.d.ts.map

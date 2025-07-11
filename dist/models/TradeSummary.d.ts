@@ -7,4 +7,9 @@ export interface ITradeSummary extends Document {
     fee: number;
     quoteVolume: number;
 }
-export declare const TradeSummary: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const TradeSummary: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<ITradeSummary, {}, {}, {}, mongoose.Document<unknown, {}, ITradeSummary, {}> & ITradeSummary & Required<{
+    _id: unknown;
+}> & {
+    __v: number;
+}, any>;
+//# sourceMappingURL=TradeSummary.d.ts.map

@@ -18,3 +18,4 @@ const UserSchema = new Schema({
 //   return bcrypt.compare(password, this.password);
 // };
 export const User = mongoose.models.User || mongoose.model("User", UserSchema);
+//# sourceMappingURL=User.js.map

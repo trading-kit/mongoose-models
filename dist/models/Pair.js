@@ -12,3 +12,4 @@ const PairSchema = new Schema({
 PairSchema.index({ server_name: 1, isBuyActive: 1, isBuy: 1 });
 PairSchema.index({ server_name: 1, active: 1, isBot: 1 });
 export const Pair = mongoose.models.Pair || mongoose.model("Pair", PairSchema);
+//# sourceMappingURL=Pair.js.map

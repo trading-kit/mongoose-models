@@ -4,4 +4,9 @@ export interface IAutoBuy extends Document {
     coin?: string;
     timestamp?: Date;
 }
-export declare const AutoBuy: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const AutoBuy: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<IAutoBuy, {}, {}, {}, mongoose.Document<unknown, {}, IAutoBuy, {}> & IAutoBuy & Required<{
+    _id: unknown;
+}> & {
+    __v: number;
+}, any>;
+//# sourceMappingURL=AutoBuy.d.ts.map

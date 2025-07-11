@@ -38,3 +38,4 @@ ProcessedTradeSchema.index({ user: 1, symbol: 1, timestamp: 1 }); // For time-se
 ProcessedTradeSchema.index({ user: 1, symbol: 1, side: 1 }); // For buy/sell analysis
 ProcessedTradeSchema.index({ user: 1, processed_at: 1 }); // For processing tracking
 export const ProcessedTrade = mongoose.models.ProcessedTrade || mongoose.model("ProcessedTrade", ProcessedTradeSchema);
+//# sourceMappingURL=ProcessedTrade.js.map

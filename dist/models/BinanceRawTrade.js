@@ -7,3 +7,4 @@ const BinanceRawTradeSchema = new Schema({
 BinanceRawTradeSchema.index({ id: -1, symbol: 1 }, { unique: true });
 BinanceRawTradeSchema.index({ symbol: 1 });
 export const BinanceRawTrade = mongoose.models.BinanceRawTrade || mongoose.model("BinanceRawTrade", BinanceRawTradeSchema, "binanceRawTrades");
+//# sourceMappingURL=BinanceRawTrade.js.map

@@ -21,3 +21,4 @@ const BitgetRawTradeSchema = new Schema({
 // BitgetRawTradeSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BitgetRawTradeSchema.index({ symbol: 1 });
 export const BitgetRawTrade = mongoose.models.BitgetRawTrade || mongoose.model("BitgetRawTrade", BitgetRawTradeSchema, "bitgetRawTrades");
+//# sourceMappingURL=BitgetRawTrade.js.map

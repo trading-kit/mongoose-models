@@ -4,4 +4,9 @@ export interface IUnocoinRawTransaction extends Document {
     uuid: string;
     timestamp?: number;
 }
-export declare const UnocoinRawTransaction: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const UnocoinRawTransaction: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<IUnocoinRawTransaction, {}, {}, {}, mongoose.Document<unknown, {}, IUnocoinRawTransaction, {}> & IUnocoinRawTransaction & Required<{
+    _id: unknown;
+}> & {
+    __v: number;
+}, any>;
+//# sourceMappingURL=UnocoinRawTransaction.d.ts.map

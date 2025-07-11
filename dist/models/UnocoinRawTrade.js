@@ -6,3 +6,4 @@ const UnocoinRawTradeSchema = new Schema({
 // Index on coin
 UnocoinRawTradeSchema.index({ coin: 1 });
 export const UnocoinRawTrade = mongoose.models.UnocoinRawTrade || mongoose.model("UnocoinRawTrade", UnocoinRawTradeSchema, "unocoinRawTrades");
+//# sourceMappingURL=UnocoinRawTrade.js.map

@@ -4,3 +4,4 @@ const SnoozeSchema = new Schema({
     expiry_time: { type: Date, required: true, index: true },
 }, { strict: false });
 export const Snooze = mongoose.models.Snooze || mongoose.model("Snooze", SnoozeSchema);
+//# sourceMappingURL=Snooze.js.map

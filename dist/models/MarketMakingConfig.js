@@ -15,3 +15,4 @@ const MarketMakingConfigSchema = new Schema({
 MarketMakingConfigSchema.index({ exchange: 1, symbol: 1 }, { unique: true });
 MarketMakingConfigSchema.index({ exchange: 1, user: 1 });
 export const MarketMakingConfig = mongoose.models.MarketMakingConfig || mongoose.model("MarketMakingConfig", MarketMakingConfigSchema);
+//# sourceMappingURL=MarketMakingConfig.js.map

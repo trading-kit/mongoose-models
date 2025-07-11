@@ -5,3 +5,4 @@ const FlexibleLoanSchema = new Schema({
     amount_usd: { type: Number, default: 0 },
 }, { strict: false });
 export const FlexibleLoan = mongoose.models.FlexibleLoan || mongoose.model("FlexibleLoan", FlexibleLoanSchema);
+//# sourceMappingURL=FlexibleLoan.js.map

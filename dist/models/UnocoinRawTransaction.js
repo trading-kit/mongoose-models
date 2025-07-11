@@ -8,3 +8,4 @@ UnocoinRawTransactionSchema.index({ uuid: 1 }, { unique: true });
 UnocoinRawTransactionSchema.index({ timestamp: -1 });
 export const UnocoinRawTransaction = mongoose.models.UnocoinRawTransaction ||
     mongoose.model("UnocoinRawTransaction", UnocoinRawTransactionSchema, "unocoinRawTransactions");
+//# sourceMappingURL=UnocoinRawTransaction.js.map

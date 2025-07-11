@@ -6,3 +6,4 @@ const BinanceRawConvertSchema = new Schema({
 // BinanceRawConvertSchema.index({ id: -1, symbol: 1 }, { unique: true });
 // BinanceRawConvertSchema.index({ id: 1 });
 export const BinanceRawConvert = mongoose.models.BinanceRawConvert || mongoose.model("BinanceRawConvert", BinanceRawConvertSchema, "binanceRawConverts");
+//# sourceMappingURL=BinanceRawConvert.js.map

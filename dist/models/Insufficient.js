@@ -5,3 +5,4 @@ const InsufficientSchema = new Schema({
 // Index on profit_per
 InsufficientSchema.index({ profit_per: 1 });
 export const Insufficient = mongoose.models.Insufficient || mongoose.model("Insufficient", InsufficientSchema);
+//# sourceMappingURL=Insufficient.js.map

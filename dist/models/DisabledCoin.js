@@ -7,3 +7,4 @@ const DisabledCoinSchema = new Schema({
 // Unique index on coin and exchange
 DisabledCoinSchema.index({ coin: 1, exchange: 1 }, { unique: true });
 export const DisabledCoin = mongoose.models.DisabledCoin || mongoose.model("DisabledCoin", DisabledCoinSchema);
+//# sourceMappingURL=DisabledCoin.js.map

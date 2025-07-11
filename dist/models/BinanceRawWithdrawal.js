@@ -8,3 +8,4 @@ const BinanceRawWithdrawalSchema = new Schema({
 // BinanceRawWithdrawalSchema.index({ id: 1 });
 export const BinanceRawWithdrawal = mongoose.models.BinanceRawWithdrawal ||
     mongoose.model("BinanceRawWithdrawal", BinanceRawWithdrawalSchema, "binanceRawWithdrawals");
+//# sourceMappingURL=BinanceRawWithdrawal.js.map

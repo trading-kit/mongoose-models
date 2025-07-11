@@ -18,3 +18,4 @@ CoindcxTradeSchema.index({ user: -1, timestamp: -1 });
 CoindcxTradeSchema.index({ timestamp: -1 });
 CoindcxTradeSchema.index({ user: 1, symbol: 1, timestamp: 1, processed: 1 });
 export const CoindcxTrade = mongoose.models.CoindcxTrade || mongoose.model("CoindcxTrade", CoindcxTradeSchema, "coindcxTrades");
+//# sourceMappingURL=CoindcxTrade.js.map

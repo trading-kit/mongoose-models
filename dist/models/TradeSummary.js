@@ -10,3 +10,4 @@ const TradeSummarySchema = new Schema({
 // Unique index on user, date, side, and quoteAsset
 TradeSummarySchema.index({ user: 1, date: -1, side: 1, quoteAsset: 1 }, { unique: true });
 export const TradeSummary = mongoose.models.TradeSummary || mongoose.model("TradeSummary", TradeSummarySchema, "tradesummary");
+//# sourceMappingURL=TradeSummary.js.map

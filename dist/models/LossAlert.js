@@ -20,3 +20,4 @@ const LossAlertSchema = new Schema({
 // Index
 LossAlertSchema.index({ exchange: 1, user: 1 }, { unique: true });
 export const LossAlert = mongoose.models.LossAlert || mongoose.model("LossAlert", LossAlertSchema);
+//# sourceMappingURL=LossAlert.js.map

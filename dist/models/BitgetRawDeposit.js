@@ -11,3 +11,4 @@ const BitgetRawDepositSchema = new Schema({
 // Indexes
 BitgetRawDepositSchema.index({ orderId: 1 }, { unique: true });
 export const BitgetRawDeposit = mongoose.models.BitgetRawDeposit || mongoose.model("BitgetRawDeposit", BitgetRawDepositSchema, "bitgetRawDeposits");
+//# sourceMappingURL=BitgetRawDeposit.js.map

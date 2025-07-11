@@ -7,3 +7,4 @@ const WazirxRawTradeSchema = new Schema({
 WazirxRawTradeSchema.index({ id: -1, symbol: 1 }, { unique: true });
 WazirxRawTradeSchema.index({ symbol: 1 });
 export const WazirxRawTrade = mongoose.models.WazirxRawTrade || mongoose.model("WazirxRawTrade", WazirxRawTradeSchema, "wazirxRawTrades");
+//# sourceMappingURL=WazirxRawTrade.js.map

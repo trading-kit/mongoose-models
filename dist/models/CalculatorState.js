@@ -30,3 +30,4 @@ const CalculatorStateSchema = new Schema({
 // Compound index for state collection
 CalculatorStateSchema.index({ user: 1, symbol: 1 });
 export const CalculatorState = mongoose.models.CalculatorState || mongoose.model("CalculatorState", CalculatorStateSchema);
+//# sourceMappingURL=CalculatorState.js.map

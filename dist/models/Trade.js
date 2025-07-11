@@ -12,3 +12,4 @@ TradeSchema.index({ platform: -1, time: -1, perDiff: -1, profit: -1 });
 TradeSchema.index({ platform: -1, symbol: -1, perDiff: -1, time: -1, profit: -1 });
 TradeSchema.index({ id: 1 }, { unique: true });
 export const Trade = mongoose.models.Trade || mongoose.model("Trade", TradeSchema);
+//# sourceMappingURL=Trade.js.map

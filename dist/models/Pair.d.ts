@@ -8,4 +8,9 @@ export interface IPair extends Document {
     server_name: string;
     buy_user?: string;
 }
-export declare const Pair: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const Pair: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<IPair, {}, {}, {}, mongoose.Document<unknown, {}, IPair, {}> & IPair & Required<{
+    _id: unknown;
+}> & {
+    __v: number;
+}, any>;
+//# sourceMappingURL=Pair.d.ts.map

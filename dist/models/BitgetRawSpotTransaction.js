@@ -13,3 +13,4 @@ const BitgetRawSpotTransactionSchema = new Schema({
 // BitgetRawSpotTransactionSchema.index({ symbol: 1 });
 export const BitgetRawSpotTransaction = mongoose.models.BitgetRawSpotTransaction ||
     mongoose.model("BitgetRawSpotTransaction", BitgetRawSpotTransactionSchema, "bitgetRawSpotTransactions");
+//# sourceMappingURL=BitgetRawSpotTransaction.js.map

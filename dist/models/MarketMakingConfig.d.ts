@@ -9,4 +9,9 @@ export interface IMarketMakingConfig extends Document {
     bidSpreadPercent?: number;
     askSpreadPercent?: number;
 }
-export declare const MarketMakingConfig: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const MarketMakingConfig: mongoose.Model<any, {}, {}, {}, any, any> | mongoose.Model<IMarketMakingConfig, {}, {}, {}, mongoose.Document<unknown, {}, IMarketMakingConfig, {}> & IMarketMakingConfig & Required<{
+    _id: unknown;
+}> & {
+    __v: number;
+}, any>;
+//# sourceMappingURL=MarketMakingConfig.d.ts.map
