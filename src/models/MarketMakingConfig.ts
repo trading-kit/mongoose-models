@@ -7,6 +7,8 @@ export interface IMarketMakingConfig extends Document {
   maxBalance: number;
   user: string; // Optional field for user association
   exchange: string; // Optional field for exchange association
+  bidSpreadPercent?: number; // Optional field for bid spread percent
+  askSpreadPercent?: number; // Optional field for ask spread percent
 }
 
 const MarketMakingConfigSchema: Schema = new Schema<IMarketMakingConfig>({
@@ -16,6 +18,10 @@ const MarketMakingConfigSchema: Schema = new Schema<IMarketMakingConfig>({
   maxBalance: { type: Number, required: true },
   user: { type: String, required: false }, // Optional field for user association
   exchange: { type: String, required: false }, // Optional field for exchange association
+  bidSpreadPercent: { type: Number, required: false }, // Optional field for bid spread percent
+  askSpreadPercent: { type: Number, required: false }, // Optional field for ask
+}, {
+  strict: false, // Allow dynamic properties
 });
 
 //unique index on symbol and user and exchange

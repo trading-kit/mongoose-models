@@ -6,5 +6,7 @@ export interface IMarketMakingConfig extends Document {
     maxBalance: number;
     user: string;
     exchange: string;
+    bidSpreadPercent?: number;
+    askSpreadPercent?: number;
 }
 export declare const MarketMakingConfig: mongoose.Model<any, {}, {}, {}, any, any>;

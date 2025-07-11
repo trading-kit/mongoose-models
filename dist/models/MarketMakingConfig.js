@@ -6,6 +6,10 @@ const MarketMakingConfigSchema = new Schema({
     maxBalance: { type: Number, required: true },
     user: { type: String, required: false }, // Optional field for user association
     exchange: { type: String, required: false }, // Optional field for exchange association
+    bidSpreadPercent: { type: Number, required: false }, // Optional field for bid spread percent
+    askSpreadPercent: { type: Number, required: false }, // Optional field for ask
+}, {
+    strict: false, // Allow dynamic properties
 });
 //unique index on symbol and user and exchange
 MarketMakingConfigSchema.index({ exchange: 1, symbol: 1 }, { unique: true });
