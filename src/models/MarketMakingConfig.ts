@@ -33,6 +33,7 @@ const MarketMakingConfigSchema: Schema = new Schema<IMarketMakingConfig>(
 //unique index on symbol and user and exchange
 MarketMakingConfigSchema.index({ exchange: 1, symbol: 1 }, { unique: true });
 MarketMakingConfigSchema.index({ exchange: 1, user: 1 });
+MarketMakingConfigSchema.index({ user: 1, exchange: 1, updatedAt: -1 });
 
 export const MarketMakingConfig =
   mongoose.models.MarketMakingConfig || mongoose.model<IMarketMakingConfig>("MarketMakingConfig", MarketMakingConfigSchema);
