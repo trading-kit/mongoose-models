@@ -4,6 +4,7 @@ export interface IMarketMakingConfig extends Document {
     baseSpreadPercent: number;
     orderQty: number;
     maxBalance: number;
+    active: boolean;
     user: string;
     exchange: string;
     bidSpreadPercent?: number;

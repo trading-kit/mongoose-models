@@ -7,9 +7,11 @@ const MarketMakingConfigSchema = new Schema({
     user: { type: String, required: false }, // Optional field for user association
     exchange: { type: String, required: false }, // Optional field for exchange association
     bidSpreadPercent: { type: Number, required: false }, // Optional field for bid spread percent
-    askSpreadPercent: { type: Number, required: false }, // Optional field for ask
+    askSpreadPercent: { type: Number, required: false }, // Optional field for ask spread percent
+    active: { type: Boolean, required: true, default: true }, // Active status of the market making configuration
 }, {
     strict: false, // Allow dynamic properties
+    timestamps: true, // Automatically manage createdAt and updatedAt timestamps
 });
 //unique index on symbol and user and exchange
 MarketMakingConfigSchema.index({ exchange: 1, symbol: 1 }, { unique: true });
