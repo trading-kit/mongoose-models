@@ -5,10 +5,10 @@ export interface ICalculatedTrade extends Document {
   user: string;
   id: number;
   side: "buy" | "sell";
-  fee_amount: string;
+  fee_amount: number;
   ecode: string;
-  quantity: string;
-  price: string;
+  quantity: number;
+  price: number;
   symbol: string;
   timestamp: number;
   order_id: string;
@@ -29,7 +29,7 @@ export interface ICalculatedTrade extends Document {
   quote_asset: string;
   usdt_price_at_trade?: number;
   price_inr: number;
-  fee_inr: string;
+  fee_inr: number;
   total_inr: number;
   tds_inr: number;
 }
@@ -40,10 +40,10 @@ const CalculatedTradeSchema = new Schema<ICalculatedTrade>(
     user: { type: String, required: true },
     id: { type: Number, required: true },
     side: { type: String, enum: ["buy", "sell"], required: true },
-    fee_amount: { type: String, required: true },
+    fee_amount: { type: Number, required: true },
     ecode: { type: String, required: true },
-    quantity: { type: String, required: true },
-    price: { type: String, required: true },
+    quantity: { type: Number, required: true },
+    price: { type: Number, required: true },
     symbol: { type: String, required: true },
     timestamp: { type: Number, required: true },
     order_id: { type: String, required: true },
@@ -64,7 +64,7 @@ const CalculatedTradeSchema = new Schema<ICalculatedTrade>(
     quote_asset: { type: String, required: true },
     usdt_price_at_trade: { type: Number },
     price_inr: { type: Number, required: true },
-    fee_inr: { type: String, required: true },
+    fee_inr: { type: Number, required: true },
     total_inr: { type: Number, required: true },
     tds_inr: { type: Number, required: true },
   },

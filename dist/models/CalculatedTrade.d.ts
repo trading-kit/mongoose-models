@@ -4,10 +4,10 @@ export interface ICalculatedTrade extends Document {
     user: string;
     id: number;
     side: "buy" | "sell";
-    fee_amount: string;
+    fee_amount: number;
     ecode: string;
-    quantity: string;
-    price: string;
+    quantity: number;
+    price: number;
     symbol: string;
     timestamp: number;
     order_id: string;
@@ -28,7 +28,7 @@ export interface ICalculatedTrade extends Document {
     quote_asset: string;
     usdt_price_at_trade?: number;
     price_inr: number;
-    fee_inr: string;
+    fee_inr: number;
     total_inr: number;
     tds_inr: number;
 }
