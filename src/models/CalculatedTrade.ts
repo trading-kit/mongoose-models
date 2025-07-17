@@ -27,7 +27,7 @@ export interface ICalculatedTrade extends Document {
   date: string;
   base_asset: string;
   quote_asset: string;
-  usdt_price_at_trade?: number;
+  usdt_price?: number;
   price_inr: number;
   fee_inr: number;
   total_inr: number;
@@ -62,7 +62,7 @@ const CalculatedTradeSchema = new Schema<ICalculatedTrade>(
     date: { type: String, required: true },
     base_asset: { type: String, required: true },
     quote_asset: { type: String, required: true },
-    usdt_price_at_trade: { type: Number },
+    usdt_price: { type: Number },
     price_inr: { type: Number, required: true },
     fee_inr: { type: Number, required: true },
     total_inr: { type: Number, required: true },
