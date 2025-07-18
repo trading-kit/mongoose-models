@@ -2,7 +2,24 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const CoinswitchClosedOrderSchema = new Schema(
+export interface ICoinswitchClosedOrder extends mongoose.Document {
+  // _id: mongoose.Types.ObjectId;
+  symbol: string;
+  price: number;
+  average_price: number;
+  orig_qty: number;
+  executed_qty: number;
+  status: string;
+  side: string;
+  exchange: string;
+  created_time: number;
+  updated_time: number;
+  ist: string;
+  user: string;
+  order_id: string;
+}
+
+const CoinswitchClosedOrderSchema = new Schema<ICoinswitchClosedOrder>(
   {
     symbol: String,
     price: Number,
@@ -32,6 +49,5 @@ CoinswitchClosedOrderSchema.index({ user: -1, updated_at: -1 });
 const CoinswitchClosedOrder =
   mongoose.models.CoinswitchClosedOrder || mongoose.model("CoinswitchClosedOrder", CoinswitchClosedOrderSchema, "coinswitchClosedOrders");
 
-//delete executed_qty :  0
 
 export { CoinswitchClosedOrder };

@@ -2,10 +2,10 @@ import mongoose, { Schema } from "mongoose";
 const CoindcxTradeSchema = new Schema({
     id: { type: Number, required: true },
     side: { type: String },
-    fee_amount: { type: String },
+    fee_amount: { type: Number },
     ecode: { type: String },
-    quantity: { type: String },
-    price: { type: String },
+    quantity: { type: Number },
+    price: { type: Number },
     symbol: { type: String },
     timestamp: { type: Number },
     fee_rate: { type: Number },

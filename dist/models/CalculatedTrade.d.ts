@@ -26,7 +26,7 @@ export interface ICalculatedTrade extends Document {
     date: string;
     base_asset: string;
     quote_asset: string;
-    usdt_price_at_trade?: number;
+    usdt_price?: number;
     price_inr: number;
     fee_inr: number;
     total_inr: number;
