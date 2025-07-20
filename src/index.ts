@@ -41,3 +41,4 @@ export * from "./models/UnocoinRawTransaction.js";
 export * from "./models/User.js";
 export * from "./models/WazirxRawTrade.js";
 export * from "./models/CalculatedTrade.js";
+export * from "./models/CoinConfig.js";
