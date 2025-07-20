@@ -3,8 +3,8 @@ import mongoose, { Document, Schema } from "mongoose";
 export interface IUserConfig extends Document {
   user: string;
   exchange: string;
-  inr: number;
-  usdt: number;
+  inr_maintained: number;
+  usdt_maintained: number;
   buy_order_size: number;
   profit_percentage: number;
   not_allocated: boolean;
@@ -17,8 +17,8 @@ const UserConfigSchema: Schema<IUserConfig> = new Schema<IUserConfig>(
   {
     user: { type: String, required: true },
     exchange: { type: String, required: true },
-    inr: { type: Number, default: 0 },
-    usdt: { type: Number, default: 0 },
+    inr_maintained: { type: Number, default: 0 },
+    usdt_maintained: { type: Number, default: 0 },
     buy_order_size: { type: Number, default: 0 },
     profit_percentage: { type: Number, default: 0 },
     not_allocated: { type: Boolean, default: false },

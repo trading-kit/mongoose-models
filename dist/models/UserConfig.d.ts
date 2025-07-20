@@ -2,8 +2,8 @@ import mongoose, { Document } from "mongoose";
 export interface IUserConfig extends Document {
     user: string;
     exchange: string;
-    inr: number;
-    usdt: number;
+    inr_maintained: number;
+    usdt_maintained: number;
     buy_order_size: number;
     profit_percentage: number;
     not_allocated: boolean;
