@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 const UserConfigSchema = new Schema({
     user: { type: String, required: true },
     exchange: { type: String, required: true },
@@ -12,6 +11,5 @@ const UserConfigSchema = new Schema({
     timestamps: true,
 });
 UserConfigSchema.index({ user: 1, exchange: 1 }, { unique: true });
-const UserConfig = mongoose.models.UserConfig || mongoose.model("UserConfig", UserConfigSchema, "userConfig");
-export default UserConfig;
+export const UserConfig = mongoose.models.UserConfig || mongoose.model("UserConfig", UserConfigSchema, "userConfig");
 //# sourceMappingURL=UserConfig.js.map

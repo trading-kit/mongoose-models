@@ -8,7 +8,6 @@ interface ICoinConfig extends Document {
     createdAt?: Date;
     updatedAt?: Date;
 }
-declare const CoinConfig: Model<ICoinConfig>;
-export default CoinConfig;
+export declare const CoinConfig: Model<ICoinConfig>;
 export type { ICoinConfig };
 //# sourceMappingURL=CoinConfig.d.ts.map
