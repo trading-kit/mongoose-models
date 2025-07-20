@@ -7,5 +7,5 @@ const CoinConfigSchema = new Schema({
     exchange: { type: String, required: true },
 }, { timestamps: true });
 CoinConfigSchema.index({ exchange: 1, coin: 1 }, { unique: true });
-export const CoinConfig = mongoose.models.CoinConfig || mongoose.model("CoinConfig", CoinConfigSchema, "coinconfig");
+export const CoinConfig = mongoose.models.CoinConfig || mongoose.model("CoinConfig", CoinConfigSchema, "coin_configs");
 //# sourceMappingURL=CoinConfig.js.map

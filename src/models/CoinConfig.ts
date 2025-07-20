@@ -23,6 +23,6 @@ const CoinConfigSchema = new Schema<ICoinConfig>(
 
 CoinConfigSchema.index({ exchange: 1, coin: 1 }, { unique: true });
 
-export const CoinConfig: Model<ICoinConfig> = mongoose.models.CoinConfig || mongoose.model<ICoinConfig>("CoinConfig", CoinConfigSchema, "coinconfig");
+export const CoinConfig: Model<ICoinConfig> = mongoose.models.CoinConfig || mongoose.model<ICoinConfig>("CoinConfig", CoinConfigSchema, "coin_configs");
 
 export type { ICoinConfig };
