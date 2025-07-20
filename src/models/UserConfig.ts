@@ -1,7 +1,18 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Document, Schema } from "mongoose";
 
-const UserConfigSchema = new Schema(
+export interface IUserConfig extends Document {
+  user: string;
+  exchange: string;
+  inr: number;
+  usdt: number;
+  buy_order_size: number;
+  profit_percentage: number;
+  not_allocated: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+const UserConfigSchema: Schema<IUserConfig> = new Schema<IUserConfig>(
   {
     user: { type: String, required: true },
     exchange: { type: String, required: true },
@@ -18,6 +29,4 @@ const UserConfigSchema = new Schema(
 
 UserConfigSchema.index({ user: 1, exchange: 1 }, { unique: true });
 
-const UserConfig = mongoose.models.UserConfig || mongoose.model("UserConfig", UserConfigSchema, "userConfig");
-
-export default UserConfig;
+export const UserConfig = mongoose.models.UserConfig || mongoose.model<IUserConfig>("UserConfig", UserConfigSchema, "userConfig");
