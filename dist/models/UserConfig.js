@@ -6,7 +6,6 @@ const UserConfigSchema = new Schema({
     usdt_maintained: { type: Number, required: true },
     buy_order_size: { type: Number, default: 0 },
     profit_percentage: { type: Number, required: false },
-    not_allocated: { type: Boolean, default: false },
     role: { type: String, required: true }, // market-making, arbitrage, high-profit
 }, {
     timestamps: true,

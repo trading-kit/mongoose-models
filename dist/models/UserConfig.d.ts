@@ -6,7 +6,6 @@ export interface IUserConfig extends Document {
     usdt_maintained: number;
     buy_order_size: number;
     profit_percentage?: number;
-    not_allocated: boolean;
     role: string;
     createdAt?: Date;
     updatedAt?: Date;

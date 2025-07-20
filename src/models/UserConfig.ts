@@ -7,7 +7,6 @@ export interface IUserConfig extends Document {
   usdt_maintained: number;
   buy_order_size: number;
   profit_percentage?: number;
-  not_allocated: boolean;
   role: string; // Default type is 'user'
   createdAt?: Date;
   updatedAt?: Date;
@@ -21,7 +20,6 @@ const UserConfigSchema: Schema<IUserConfig> = new Schema<IUserConfig>(
     usdt_maintained: { type: Number, required: true },
     buy_order_size: { type: Number, default: 0 },
     profit_percentage: { type: Number, required: false },
-    not_allocated: { type: Boolean, default: false },
     role: { type: String, required: true }, // market-making, arbitrage, high-profit
   },
   {
