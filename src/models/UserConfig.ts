@@ -8,6 +8,7 @@ export interface IUserConfig extends Document {
   buy_order_size: number;
   profit_percentage: number;
   not_allocated: boolean;
+  role: string; // Default type is 'user'
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -21,12 +22,13 @@ const UserConfigSchema: Schema<IUserConfig> = new Schema<IUserConfig>(
     buy_order_size: { type: Number, default: 0 },
     profit_percentage: { type: Number, default: 0 },
     not_allocated: { type: Boolean, default: false },
+    role: { type: String, required: true }, // market-making, arbitrage, high-profit
   },
   {
     timestamps: true,
   }
 );
 
-UserConfigSchema.index({ user: 1, exchange: 1 }, { unique: true });
+UserConfigSchema.index({ exchange: 1, user: 1 }, { unique: true });
 
 export const UserConfig = mongoose.models.UserConfig || mongoose.model<IUserConfig>("UserConfig", UserConfigSchema, "userConfig");

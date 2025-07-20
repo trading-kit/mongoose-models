@@ -6,6 +6,6 @@ const CoinConfigSchema = new Schema({
     is_sell_active: { type: Boolean, default: false },
     exchange: { type: String, required: true },
 }, { timestamps: true });
-CoinConfigSchema.index({ coin: 1, exchange: 1 }, { unique: true });
+CoinConfigSchema.index({ exchange: 1, coin: 1 }, { unique: true });
 export const CoinConfig = mongoose.models.CoinConfig || mongoose.model("CoinConfig", CoinConfigSchema, "coinconfig");
 //# sourceMappingURL=CoinConfig.js.map
