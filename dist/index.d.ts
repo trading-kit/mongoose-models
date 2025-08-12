@@ -43,4 +43,5 @@ export * from "./models/WazirxRawTrade.js";
 export * from "./models/CalculatedTrade.js";
 export * from "./models/CoinConfig.js";
 export * from "./models/UserConfig.js";
+export * from "./models/GiottusTrade.js";
 //# sourceMappingURL=index.d.ts.map
