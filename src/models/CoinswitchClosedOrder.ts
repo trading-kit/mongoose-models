@@ -42,12 +42,11 @@ const CoinswitchClosedOrderSchema = new Schema<ICoinswitchClosedOrder>(
 CoinswitchClosedOrderSchema.index({ id: -1, user: -1 }, { unique: true });
 
 // //create index on user and timestamp
-CoinswitchClosedOrderSchema.index({ user: -1, updated_at: -1 });
+CoinswitchClosedOrderSchema.index({ user: -1, updated_time: -1 });
 // CoinswitchClosedOrderSchema.index({ timestamp: -1 });
 
 //create index on
-const CoinswitchClosedOrder =
+export const CoinswitchClosedOrder =
   mongoose.models.CoinswitchClosedOrder || mongoose.model("CoinswitchClosedOrder", CoinswitchClosedOrderSchema, "coinswitchClosedOrders");
 
 
-export { CoinswitchClosedOrder };
