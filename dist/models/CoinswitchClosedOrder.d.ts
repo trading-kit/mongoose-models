@@ -14,6 +14,5 @@ export interface ICoinswitchClosedOrder extends mongoose.Document {
     user: string;
     order_id: string;
 }
-declare const CoinswitchClosedOrder: mongoose.Model<any, {}, {}, {}, any, any>;
-export { CoinswitchClosedOrder };
+export declare const CoinswitchClosedOrder: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=CoinswitchClosedOrder.d.ts.map
