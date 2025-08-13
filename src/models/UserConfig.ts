@@ -10,6 +10,7 @@ export interface IUserConfig extends Document {
   role: string; // Default type is 'user'
   createdAt?: Date;
   updatedAt?: Date;
+  blacklisted_coins?: string[]; // Optional field for blacklisted coins
 }
 
 const UserConfigSchema: Schema<IUserConfig> = new Schema<IUserConfig>(
@@ -21,6 +22,7 @@ const UserConfigSchema: Schema<IUserConfig> = new Schema<IUserConfig>(
     buy_order_size: { type: Number, default: 0 },
     profit_percentage: { type: Number, required: false },
     role: { type: String, required: true }, // market-making, arbitrage, high-profit
+    blacklisted_coins: { type: [String], default: [] }, // Optional field for blacklisted coins
   },
   {
     timestamps: true,
