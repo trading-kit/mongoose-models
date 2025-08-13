@@ -9,6 +9,7 @@ export interface IUserConfig extends Document {
     role: string;
     createdAt?: Date;
     updatedAt?: Date;
+    blacklisted_coins?: string[];
 }
 export declare const UserConfig: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=UserConfig.d.ts.map
