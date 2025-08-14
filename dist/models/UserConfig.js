@@ -6,8 +6,11 @@ const UserConfigSchema = new Schema({
     usdt_maintained: { type: Number, required: true },
     buy_order_size: { type: Number, default: 0 },
     profit_percentage: { type: Number, required: false },
-    role: { type: String, required: true }, // market-making, arbitrage, high-profit
-    blacklisted_coins: { type: [String], default: [] }, // Optional field for blacklisted coins
+    role: { type: String, required: true },
+    blacklisted_coins: { type: [String], default: [] },
+    orders_active: { type: Boolean, default: true },
+    buy_orders_active: { type: Boolean, default: true },
+    sell_orders_active: { type: Boolean, default: true },
 }, {
     timestamps: true,
 });
