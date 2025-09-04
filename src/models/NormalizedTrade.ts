@@ -23,6 +23,7 @@ export interface INormalizedTrade extends Document {
   processed: boolean;
   base_asset: string;
   quote_asset: string;
+  symbol: string;
 }
 
 const NormalizedTradeSchema = new Schema<INormalizedTrade>(
@@ -49,6 +50,7 @@ const NormalizedTradeSchema = new Schema<INormalizedTrade>(
     processed: { type: Boolean, required: true },
     base_asset: { type: String, required: true },
     quote_asset: { type: String, required: true },
+    symbol: { type: String, required: true },
   },
   {
     strict: true,

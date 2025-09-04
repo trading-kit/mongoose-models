@@ -22,6 +22,7 @@ const NormalizedTradeSchema = new Schema({
     processed: { type: Boolean, required: true },
     base_asset: { type: String, required: true },
     quote_asset: { type: String, required: true },
+    symbol: { type: String, required: true },
 }, {
     strict: true,
 });

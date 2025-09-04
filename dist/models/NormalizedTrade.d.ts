@@ -22,6 +22,7 @@ export interface INormalizedTrade extends Document {
     processed: boolean;
     base_asset: string;
     quote_asset: string;
+    symbol: string;
 }
 export declare const NormalizedTrade: mongoose.Model<any, {}, {}, {}, any, any>;
 //# sourceMappingURL=NormalizedTrade.d.ts.map
