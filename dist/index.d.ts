@@ -45,4 +45,5 @@ export * from "./models/CoinConfig.js";
 export * from "./models/UserConfig.js";
 export * from "./models/GiottusTrade.js";
 export * from "./models/RealizedPnl.js";
+export * from "./models/NormalizedTrade.js";
 //# sourceMappingURL=index.d.ts.map
