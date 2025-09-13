@@ -16,7 +16,7 @@ const GiottusTradeSchema = new Schema({
     user: { type: String, required: true },
 }, { strict: false });
 // Compound index for faster queries
-// GiottusTradeSchema.index({ user: -1, id: -1 }, { unique: true });
+GiottusTradeSchema.index({ user: -1, id: -1 }, { unique: true });
 GiottusTradeSchema.index({ user: -1, date: -1, id: -1 });
 export const GiottusTrade = mongoose.models.GiottusTrade || mongoose.model("GiottusTrade", GiottusTradeSchema, "giottus_trades");
 //# sourceMappingURL=GiottusTrade.js.map
