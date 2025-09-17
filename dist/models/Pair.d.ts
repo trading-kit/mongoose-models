@@ -5,7 +5,7 @@ export interface IPair extends Document {
     instant_sell_per?: number;
     instant_buy_per?: number;
     symbol: string;
-    server_name: string;
+    exchange: string;
     buy_user?: string;
 }
 export declare const Pair: mongoose.Model<any, {}, {}, {}, any, any>;
