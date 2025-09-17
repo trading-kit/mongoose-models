@@ -11,5 +11,6 @@ const PairSchema = new Schema({
 // Indexes
 PairSchema.index({ exchange: 1, isBuyActive: 1, isBuy: 1 });
 PairSchema.index({ exchange: 1, active: 1, isBot: 1 });
+PairSchema.index({ exchange: 1, symbol: 1 }, { unique: true });
 export const Pair = mongoose.models.Pair || mongoose.model("Pair", PairSchema);
 //# sourceMappingURL=Pair.js.map
