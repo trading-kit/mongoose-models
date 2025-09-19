@@ -13,9 +13,9 @@ const CoindcxTradeSchema = new Schema({
     processed: { type: Boolean, default: false },
 }, { strict: false });
 // Compound index for faster queries
-CoindcxTradeSchema.index({ id: -1, user: -1, order_id: -1 }, { unique: true });
+CoindcxTradeSchema.index({ user: -1, id: -1, order_id: -1 }, { unique: true });
 CoindcxTradeSchema.index({ user: -1, timestamp: -1 });
-CoindcxTradeSchema.index({ timestamp: -1 });
+CoindcxTradeSchema.index({ timestamp: -1, quoteAsset: -1 });
 CoindcxTradeSchema.index({ user: 1, symbol: 1, timestamp: 1, processed: 1 });
 export const CoindcxTrade = mongoose.models.CoindcxTrade || mongoose.model("CoindcxTrade", CoindcxTradeSchema, "coindcxTrades");
 //# sourceMappingURL=CoindcxTrade.js.map
