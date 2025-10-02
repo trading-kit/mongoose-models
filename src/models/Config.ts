@@ -4,14 +4,18 @@ export interface IConfig extends Document {
   app: string;
   mmLossAlertTime?: number;
   orders_active: boolean; // New field to track if orders are active
-  exchange?: string
+  exchange?: string,
+  isBuyActive: boolean,
+  isSellActive: boolean,
 }
 
 const ConfigSchema: Schema = new Schema<IConfig>({
   app: { type: String, required: true },
   mmLossAlertTime: { type: Number },
   orders_active: { type: Boolean, default: true }, // Default to true
-  exchange: { type: String, required: false}
+  exchange: { type: String, required: false},
+  isBuyActive: { type: Boolean, default: true },
+  isSellActive: { type: Boolean, default: true },
 }, { strict: false });
 
 export const Config =
