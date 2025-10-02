@@ -14,7 +14,6 @@ export * from "./models/BitgetRawTrade.js";
 export * from "./models/CalculatorState.js";
 export * from "./models/CoindcxMTrade.js";
 export * from "./models/CoindcxTds.js";
-export * from "./models/CoindcxTrade.js";
 export * from "./models/CoinswitchClosedOrder.js";
 export * from "./models/CoinswitchTrade.js";
 export * from "./models/Config.js";

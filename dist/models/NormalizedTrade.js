@@ -28,5 +28,6 @@ const NormalizedTradeSchema = new Schema({
 });
 // Compound unique index on id + order_id
 NormalizedTradeSchema.index({ exchange: 1, user: 1, id: 1, order_id: 1 }, { unique: true });
+NormalizedTradeSchema.index({ exchange: 1, user: 1, timestamp: 1 });
 export const NormalizedTrade = mongoose.models.NormalizedTrade || mongoose.model("NormalizedTrade", NormalizedTradeSchema);
 //# sourceMappingURL=NormalizedTrade.js.map
